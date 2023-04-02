@@ -1,0 +1,7 @@
+bmp 0.2
+=======
+* Add ability to read 32 bit ARGB images
+
+bmp 0.1
+=======
+* first version on CRAN

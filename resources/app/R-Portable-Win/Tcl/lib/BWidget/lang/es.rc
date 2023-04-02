@@ -1,0 +1,69 @@
+! ------------------------------------------------------------------------------
+!  es.rc
+!  This file is part of Unifix BWidget Toolkit
+!  Definition of spanish resources
+!  daniel@rawbyte.com, jima, neko
+! ------------------------------------------------------------------------------
+
+
+! --- symbolic names of buttons ------------------------------------------------
+
+*abortName:    &Abortar
+*retryName:    &Reintentar
+*ignoreName:   &Ignorar
+*okName:       &OK
+*cancelName:   &Cancelar
+*yesName:      &Sí
+*noName:       &No
+
+
+! --- symbolic names of label of SelectFont dialog ----------------------------
+
+*boldName:          Negrita
+*italicName:        Cursiva
+*underlineName:     Subrayado
+*overstrikeName:    Tachado
+*fontName:          &Fuente
+*sizeName:          &Tamaño
+*styleName:         &Estilo
+*colorPickerName:   &Color...
+
+
+! --- symbolic names of label of PasswdDlg dialog -----------------------------
+
+*loginName:    &Usuario
+*passwordName: &Contraseña
+
+
+! --- resource for SelectFont dialog ------------------------------------------
+
+*SelectFont.title:        Selección de fuente
+*SelectFont.sampletext:   Texto de Ejemplo
+
+
+! --- resource for MessageDlg dialog ------------------------------------------
+
+*MessageDlg.noneTitle:      Mensaje
+*MessageDlg.infoTitle:      Información
+*MessageDlg.questionTitle:  Pregunta
+*MessageDlg.warningTitle:   Aviso
+*MessageDlg.errorTitle:     Error
+
+! --- resource for PasswdDlg dialog -------------------------------------------
+
+*PasswdDlg.title:  Introduzca su usuario y contraseña
+
+! --- symbolic names of label of SelectColor dialog ----------------------------
+
+*baseColorsName: Colores base
+*userColorsName: Colores de usuario
+
+*yourSelectionName: Su selección
+*colorSelectorsName: Selectores de color
+
+
+! --- dynamic help text for SelectColor dialog.  Lines 75 chars max, split by '\n'.
+
+*mouseHelpTextName: Haga click o arrastre el ratón en los selectores de color para elegir un color.\nSi el color seleccionado permanece negro, sin importar lo que haga en el selector de\ncolor izquierdo (para tono y saturación), compruebe la posición del puntero en el selector\nde color derecho (para brillo).\n\nHaga click en uno de los "Colores base" para leer un valor de esa paleta.\n\nClick en uno de los "Colores de usuario" para leer un valor de esa paleta, o para escribir\nla paleta si el color está vacio.  Si luego usted usa los Selectores de color para cambiar\nel color, su elección se escribirá en ese color de la paleta (de usuario) hasta seleccionar\notro color de la paleta (base o de usuario).
+
+*keyboardHelpTextName: Haga click en la ventana de entrada de texto a la izquierda del área "Su\nSelección".\n\nTeclee el color que desee en formato RGB hexadecimal. Siempre que el número de dígitos\nhexadecimales sea múltiplo de 3, el valor de color es válido y se copiará a las\notras partes del Selector de Color.\n\nSalga de la ventana de entrada de texto haciendo click en otro lugar, o presionando la\ntecla "Escape" o "Enter". La ventana de entrada de texto mostrará entonces el color en\nformato RGB 24-bit, aunque internamente el Selector de Color usa colores de 48-bit.\n\nCuando el control de entrada de texto no tenga el foco de teclado (ej, no muestra un\ncursor), las teclas "Enter" y "Escape" hacen lo mismo que los botones "OK" y "Cancel",\nrespectivamente.

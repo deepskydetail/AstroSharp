@@ -1,0 +1,10 @@
+useDynLib("waveslim", .registration = TRUE, .fixes = "C_")
+
+exportPattern("^[^C_]")
+importFrom("grDevices", "rainbow")
+importFrom("graphics", "axis", "box", "image", "lines", "mtext", "par",
+           "plot")
+importFrom("stats", "convolve", "fft", "filter", "integrate", "lsfit",
+           "mad", "median", "mvfft", "optim", "optimize", "pchisq",
+           "qchisq", "qnorm", "rnorm", "runif", "spec.taper")
+S3method(plot, dwt.2d)

@@ -1,0 +1,9 @@
+neuralnet-package	neuralnet-package
+compute	compute
+confidence.interval	confidence.interval
+gwplot	gwplot
+neuralnet	neuralnet
+plot.nn	plot.nn
+predict.nn	predict.nn
+prediction	prediction
+print.nn	neuralnet

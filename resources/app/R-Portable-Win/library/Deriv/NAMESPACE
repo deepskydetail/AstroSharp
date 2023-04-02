@@ -1,0 +1,5 @@
+export(Deriv, Simplify, format1, drule, simplifications, Cache, deCache)
+importFrom("stats", "D")
+importFrom("utils", "modifyList")
+importFrom("utils", "head")
+importFrom("methods", "substituteDirect")

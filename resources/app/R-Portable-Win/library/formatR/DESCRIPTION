@@ -1,0 +1,36 @@
+Package: formatR
+Type: Package
+Title: Format R Code Automatically
+Version: 1.14
+Authors@R: c(
+    person("Yihui", "Xie", role = c("aut", "cre"), email = "xie@yihui.name", comment = c(ORCID = "0000-0003-0645-5666")),
+    person("Ed", "Lee", role = "ctb"),
+    person("Eugene", "Ha", role = "ctb"),
+    person("Kohske", "Takahashi", role = "ctb"),
+    person("Pavel", "Krivitsky", role = "ctb"),
+    person()
+    )
+Description: Provides a function tidy_source() to format R source code. Spaces
+    and indent will be added to the code automatically, and comments will be
+    preserved under certain conditions, so that R code will be more
+    human-readable and tidy. There is also a Shiny app as a user interface in
+    this package (see tidy_app()).
+Depends: R (>= 3.2.3)
+Suggests: rstudioapi, shiny, testit, rmarkdown, knitr
+License: GPL
+URL: https://github.com/yihui/formatR
+BugReports: https://github.com/yihui/formatR/issues
+VignetteBuilder: knitr
+RoxygenNote: 7.2.3
+Encoding: UTF-8
+NeedsCompilation: no
+Packaged: 2023-01-17 21:46:29 UTC; yihui
+Author: Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),
+  Ed Lee [ctb],
+  Eugene Ha [ctb],
+  Kohske Takahashi [ctb],
+  Pavel Krivitsky [ctb]
+Maintainer: Yihui Xie <xie@yihui.name>
+Repository: CRAN
+Date/Publication: 2023-01-17 22:30:02 UTC
+Built: R 4.2.3; ; 2023-03-23 02:15:29 UTC; windows

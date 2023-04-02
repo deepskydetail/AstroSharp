@@ -1,0 +1,31 @@
+Package: readbitmap
+License: GPL (>= 2)
+Title: Simple Unified Interface to Read Bitmap Images
+        (BMP,JPEG,PNG,TIFF)
+Authors@R: c(
+    person("Gregory","Jefferis", email="jefferis@gmail.com", 
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355")),
+    person("Derek", "Ogle", role = c("ctb")),
+    person("Simon", "Barthelme", role = c("ctb"))
+    )
+Description: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap
+    images. Identification defaults to the use of the magic number embedded in
+    the file rather than the file extension. Reading of JPEG and PNG image
+    depends on libjpg and libpng libraries. See file INSTALL for details if
+    necessary.
+Version: 0.1.5
+URL: https://github.com/jefferis/readbitmap
+BugReports: https://github.com/jefferis/readbitmap/issues
+SystemRequirements: libjpeg, libpng
+Imports: bmp, jpeg, png, tiff
+Suggests: pixmap, testthat
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2018-06-27 11:45:09 UTC; jefferis
+Author: Gregory Jefferis [aut, cre] (<https://orcid.org/0000-0002-0587-9355>),
+  Derek Ogle [ctb],
+  Simon Barthelme [ctb]
+Maintainer: Gregory Jefferis <jefferis@gmail.com>
+Repository: CRAN
+Date/Publication: 2018-06-27 13:48:52 UTC
+Built: R 4.2.3; ; 2023-03-23 03:14:25 UTC; windows

@@ -1,0 +1,4 @@
+ConvertIntToUInt        Fix a 32 bit unsigned integer that has been
+                        read as signed
+is.bmp                  Returns TRUE if file is a Windows BMP image
+read.bmp                Open windows BMP format image files

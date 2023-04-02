@@ -1,0 +1,5 @@
+image_type              Identify the type of an image using the magic
+                        value at the start of the file
+read.bitmap             Read in a bitmap image in JPEG, PNG, BMP or
+                        TIFF format
+readbitmap-package      readbitmap: read standard bitmap image formats
