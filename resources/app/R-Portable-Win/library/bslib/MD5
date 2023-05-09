@@ -1,4 +1,4 @@
-2fad44c902af744f0141a13e8469d952 *DESCRIPTION
+7e9f2adb8675da214db129a022abf6a0 *DESCRIPTION
 e9b992f84a8a6648cd7dc9a36b57f58e *INDEX
 13c800bd317042f82b64c91f558873cf *LICENSE
 760659f7918912ae7d729b3786c16d65 *Meta/Rd.rds
@@ -6,7 +6,7 @@ e9b992f84a8a6648cd7dc9a36b57f58e *INDEX
 abd1f6c53723615973848984e05d6275 *Meta/hsearch.rds
 e0b9db0fc42de569e71a06f7b21a1523 *Meta/links.rds
 9965edcca9c5a644abd2631ae77780ea *Meta/nsInfo.rds
-86f24262781190b2cdfbe94ab269b633 *Meta/package.rds
+55aad65bbe2aeb37fd6824fb734ab70b *Meta/package.rds
 dd73d1c7bb4cf1a6ae9ceca5886c2f45 *NAMESPACE
 0f0147bcd3f48c0747cbb8363eef1dd4 *NEWS.md
 d6c68f1fe41ced6e98a766a3757313da *R/bslib
@@ -114,10 +114,10 @@ dcc5cf114b0d9053eed6643d0346bc42 *fonts/pe03MImSLYBIv1o4X1M8cc9iB_5p.woff
 781095d065f433f07c8aa8dd334f42b9 *fonts/q5uGsou0JOdh94bfvQlr.woff
 1ac0a3bff56d0ab355f5f1c9b7b636df *help/AnIndex
 f13f595fa0eb106c1e38fbbaf44a8fad *help/aliases.rds
-23d01c8e9980ddbbb2c4ca361ac6472c *help/bslib.rdb
-644f324177de055d822952e55e855907 *help/bslib.rdx
+05559b5b9f1275dc7170ee710589e9d7 *help/bslib.rdb
+5df795f6c4ee08acbb47bba8fa1e54f6 *help/bslib.rdx
 c96ada8c0b8fe4717e75eab408be9e2c *help/figures/rstudio-templates.png
-05b3259e149659aae8f5985a37068aa1 *help/paths.rds
+8d16fc039836ec77e59b5f01d446a0d7 *help/paths.rds
 5038fea7e602a13b6868339a8c7c50a2 *html/00Index.html
 3845aef6126cf18c45937f292f23508c *html/R.css
 a1652c5952a73193374e6a6d61323e62 *lib/bs-a11y-p/LICENSE.md
