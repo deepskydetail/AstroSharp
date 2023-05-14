@@ -9,7 +9,6 @@
 
 library(shiny)
 source('GetMatrixFun9x9.R')
-source('GetMatrixFun.R')
 library(shinycssloaders)
 library(neuralnet)
 library(dplyr)
@@ -29,7 +28,7 @@ ui <- fluidPage(
   theme = bs_theme(version = 4, bootswatch = "darkly"),
   
   # Application title
-  titlePanel("AstroSharp by Deep Sky Detail"),
+  titlePanel("Deep Sky Detail"),
   # Horizontal line ----
   tags$hr(),
   
@@ -45,11 +44,6 @@ ui <- fluidPage(
                c("First Beta",
                  "Newest Model"),
                selected = list("Newest Model")),
-  
-  radioButtons("Color", "Type of Image",
-               c("Color",
-                 "Black and White"),
-               selected = list("Color")),
   # Horizontal line ----
   
   tags$hr(),
@@ -87,8 +81,7 @@ ui <- fluidPage(
 
 #Server
 server <- function(input, output, session) {
-  options(shiny.maxRequestSize=10000*1024^2,
-          digits = 12)
+  options(shiny.maxRequestSize=10000*1024^2)
   #library(devtools)
   #library(reticulate)
   #library(keras)
@@ -122,10 +115,6 @@ server <- function(input, output, session) {
     input$NNModel
   })
   
-  Clr <- reactive({
-    input$Color
-  })
-  
   
     
     preproc <- reactive({
@@ -133,23 +122,7 @@ server <- function(input, output, session) {
       if(NNModeltemp() == "Newest Model"){
         
       file_to_read1 = input_file()
-      
-      if(Clr() == "Color"){
-        tif2 <- readTIFF(file_to_read1$datapath)
-        RGBdf <- data.frame(R = as.vector(tif2[,,1]),
-                            G = as.vector(tif2[,,2]),
-                            B = as.vector(tif2[,,3]))
-        
-        LuvDF <- convertColor(RGBdf, from = "sRGB", to = "Luv")
-        
-        tif1 <- matrix(LuvDF[,1], nrow = nrow(tif2))/100
-        
-        
-      } else(
-        tif1 <- readTIFF(file_to_read1$datapath)
-      )
-      
-      
+      tif1 <- readTIFF(file_to_read1$datapath)
       tifimg <- matrix(0, nrow = nrow(tif1) + 8,
                        ncol = ncol(tif1) + 8)
       tifimg[5:(nrow(tifimg)-4 ), 5:(ncol(tifimg)-4 )] <- tif1 ## Do some padding
@@ -279,28 +252,10 @@ server <- function(input, output, session) {
       )
       
       
-      testsamp <- fill_matrix(predvals, rowvals, colvals) 
-      testsammat <- testsamp[5:(nrow(testsamp)), 5:(ncol(testsamp))] # This is lined up with original image, but is missing last column/row, and first/last four rows/columns are junk
-      testsammat <- testsammat[-c(1:4), -c(1:4)]
-      testsammat <- testsammat[-c((nrow(testsammat)-3):nrow(testsammat)), -c((ncol(testsammat)-3):ncol(testsammat))]
-      testsamp2 <- tif1
-      testsamp2[5:(nrow(testsamp2)-5),  5:(ncol(testsamp2)-5)] <- testsammat
-      if(Clr() == "Color"){
-        LuvDF[,1] <- as.vector(testsamp2)*100
-        
-        RGB2df <- convertColor(LuvDF, from = "Luv", to = "sRGB")
-        
-        Rmat <- matrix(RGB2df[,1], nrow = nrow(testsamp2))
-        Gmat <- matrix(RGB2df[,2], nrow = nrow(testsamp2))
-        Bmat <- matrix(RGB2df[,3], nrow = nrow(testsamp2))
-        
-        testsamp2 <- array(c(Rmat, Gmat, Bmat), dim = c(nrow(Rmat), 
-                                           ncol(Rmat),
-                                           3))
-        return(testsamp2)
-        
-      }
-      else(return(testsamp2))
+      testsamp <- fill_matrix(predvals, rowvals, colvals)
+      
+      
+      return(testsammat <- testsamp[3:nrow(testsamp), 3:ncol(testsamp)])
       
       }
       
@@ -308,25 +263,7 @@ server <- function(input, output, session) {
         
         
           file_to_read1 = input_file()
-          if(Clr() == "Color"){
-            tif2 <- readTIFF(file_to_read1$datapath)
-            RGBdf <- data.frame(R = as.vector(tif2[,,1]),
-                                G = as.vector(tif2[,,2]),
-                                B = as.vector(tif2[,,3]))
-            
-            LuvDF <- convertColor(RGBdf, from = "sRGB", to = "Luv")
-            
-            tif1 <- matrix(LuvDF[,1], nrow = nrow(tif2))/100
-            
-            
-          } else(
-            tif1 <- readTIFF(file_to_read1$datapath)
-          )
-          
-          tifimg <- matrix(0, nrow = nrow(tif1) + 4,
-                           ncol = ncol(tif1) + 4)
-          tifimg[3:(nrow(tifimg)-2 ), 3:(ncol(tifimg)-2 )] <- tif1 ## Do some padding
-          
+          tifimg <- readTIFF(file_to_read1$datapath)
           
           nseg <- as.numeric(input$seg)
           
@@ -495,30 +432,10 @@ server <- function(input, output, session) {
           
           
           testsamp <- fill_matrix(predvals, rowvals, colvals)
-          testsammat <- testsamp[3:(nrow(testsamp)), 3:(ncol(testsamp))] # This is lined up with original image, but is missing last column/row, and first two rows/columns are junk
-          testsammat <- testsammat[-c(1:2), -c(1:2)]
-          testsammat <- testsammat[-c((nrow(testsammat)-1):nrow(testsammat)), -c((ncol(testsammat)-1):ncol(testsammat))]
-          testsamp2 <- tif1
-          testsamp2[3:(nrow(testsamp2)-3),  3:(ncol(testsamp2)-3)] <- testsammat
           
           
-          if(Clr() == "Color"){
-            LuvDF[,1] <- as.vector(testsamp2)*100
-            
-            RGB2df <- convertColor(LuvDF, from = "Luv", to = "sRGB")
-            
-            Rmat <- matrix(RGB2df[,1], nrow = nrow(testsamp2))
-            Gmat <- matrix(RGB2df[,2], nrow = nrow(testsamp2))
-            Bmat <- matrix(RGB2df[,3], nrow = nrow(testsamp2))
-            
-            testsamp2 <- array(c(Rmat, Gmat, Bmat), dim = c(nrow(Rmat), 
-                                                            ncol(Rmat),
-                                                            3))
-            return(testsamp2)
-            
-          }
-          else(return(testsamp2))
           
+          return(testsammat <- testsamp[3:nrow(testsamp), 3:ncol(testsamp)])
         
       }
     })
@@ -533,10 +450,7 @@ server <- function(input, output, session) {
   output$p1 <-renderPlot({
     file_to_read = input_file()
     if(is.null(file_to_read)){
-      if(input$Color == "Color"){
-        file2 = readTIFF("CT1.tif")
-      }
-      else(file2 = readTIFF("T1.tif"))
+      file2 = readTIFF("T1.tif")
       par(bg ="dark grey")
       plot(as.cimg(file2), main = "Original Preview")
 
@@ -552,11 +466,7 @@ server <- function(input, output, session) {
   output$p2 <-renderPlot({  
     file_to_read = input_file()
     if(is.null(file_to_read)){
-      if(input$Color == "Color"){
-        file2 = readTIFF("CR1.tif")
-      }
-      else(file2 = readTIFF("R1.tif"))
-      
+      file2 = readTIFF("R1.tif")
       par(bg ="dark grey")
       plot(as.cimg(file2), main = "Sharpened Preview")
     }
