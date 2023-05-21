@@ -6,7 +6,9 @@
 
 ## Minimum Requirements
 **16GB of RAM**
+
 **4GB of Free Hard Drive Space**
+
 **Intel i-series 9th Generation Processor or equivalent/better**
 
 *The software may run on systems that don't meet these requirments, but it isn't guaranteed*
