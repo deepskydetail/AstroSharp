@@ -1,0 +1,17 @@
+Package: bmp
+Maintainer: Gregory Jefferis <jefferis@gmail.com>
+License: GPL (>= 2)
+Title: Read Windows Bitmap (BMP) Images
+Author: Gregory Jefferis
+Description: Reads Windows BMP format images. Currently limited to 8 bit
+    greyscale images and 24,32 bit (A)RGB images. Pure R implementation without
+    external dependencies.
+Version: 0.3
+Suggests: pixmap, testthat
+Collate: 'read-bmp.R'
+RoxygenNote: 6.0.1
+NeedsCompilation: no
+Packaged: 2017-09-11 11:13:00 UTC; jefferis
+Repository: CRAN
+Date/Publication: 2017-09-11 11:50:08 UTC
+Built: R 4.2.3; ; 2023-03-23 02:19:09 UTC; windows

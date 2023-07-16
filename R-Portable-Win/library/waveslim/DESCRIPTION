@@ -1,0 +1,27 @@
+Package: waveslim
+Version: 1.8.4
+Date: 2022-08-13
+Title: Basic Wavelet Routines for One-, Two-, and Three-Dimensional
+        Signal Processing
+Author: Brandon Whitcher
+Maintainer: Brandon Whitcher <bwhitcher@gmail.com>
+Depends: R (>= 2.11.0), graphics, grDevices, stats, utils
+Suggests: fftw, covr
+Description: Basic wavelet routines for time series (1D), image (2D) and array 
+  (3D) analysis.  The code provided here is based on wavelet methodology 
+  developed in Percival and Walden (2000); Gencay, Selcuk and Whitcher (2001); 
+  the dual-tree complex wavelet transform (DTCWT) from Kingsbury (1999, 2001) as
+  implemented by Selesnick; and Hilbert wavelet pairs (Selesnick 2001, 2002).  
+  All figures in chapters 4-7 of GSW (2001) are reproducible using this package 
+  and R code available at the book website(s) below.
+License: BSD_3_clause + file LICENSE
+URL: https://waveslim.blogspot.com
+RoxygenNote: 7.2.1
+Encoding: UTF-8
+NeedsCompilation: yes
+Packaged: 2022-08-14 08:56:01 UTC; brandon
+Repository: CRAN
+Date/Publication: 2022-08-14 11:40:02 UTC
+Built: R 4.2.3; x86_64-w64-mingw32; 2023-03-23 02:20:25 UTC; windows
+ExperimentalWindowsRuntime: ucrt
+Archs: x64

@@ -1,0 +1,18 @@
+Package: tiff
+Version: 0.1-11
+Title: Read and Write TIFF Images
+Author: Simon Urbanek <Simon.Urbanek@r-project.org> [aut, cre],
+	Kent Johnson <kjohnson@akoyabio.com> [ctb]
+Maintainer: Simon Urbanek <Simon.Urbanek@r-project.org>
+Depends: R (>= 2.9.0)
+Description: Functions to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors, including native image representation.
+License: GPL-2 | GPL-3
+SystemRequirements: tiff and jpeg libraries
+URL: https://www.rforge.net/tiff/
+NeedsCompilation: yes
+Packaged: 2022-01-31 04:49:42 UTC; rforge
+Repository: CRAN
+Date/Publication: 2022-01-31 13:39:41 UTC
+Built: R 4.2.0; x86_64-w64-mingw32; 2022-04-24 01:21:06 UTC; windows
+ExperimentalWindowsRuntime: ucrt
+Archs: x64

@@ -1,0 +1,67 @@
+! ------------------------------------------------------------------------------
+!  no.rc
+!  This file is part of Unifix BWidget Toolkit
+!  Definition of norwegian resources
+! ------------------------------------------------------------------------------
+
+
+! --- symbolic names of buttons ------------------------------------------------
+
+*abortName:   &Om
+*retryName:   &Prøv igjen
+*ignoreName:  &Ignore
+*okName:      &OK
+*cancelName:  &Avbryt
+*yesName:     &Ja
+*noName:      &Nei
+
+
+! --- symbolic names of label of SelectFont dialog ----------------------------
+
+*boldName:          Halvfet
+*italicName:        Kursiv
+*underlineName:     Understreking
+*overstrikeName:    Overstryke
+*fontName:          &Skrift
+*sizeName:          &Størrelse
+*styleName:         St&il
+*colorPickerName:   &Color...
+
+
+! --- symbolic names of label of PasswdDlg dialog -----------------------------
+
+*loginName:    &Logg inn
+*passwordName: &Passord
+
+
+! --- resource for SelectFont dialog ------------------------------------------
+
+*SelectFont.title:	    Skriftvalg
+*SelectFont.sampletext:	    Prøve tekst
+
+
+! --- resource for MessageDlg dialog ------------------------------------------
+
+*MessageDlg.noneTitle:      Melding
+*MessageDlg.infoTitle:      Informasjon
+*MessageDlg.questionTitle:  Spørsmål
+*MessageDlg.warningTitle:   Advarsel
+*MessageDlg.errorTitle:     Feil
+
+! --- resource for PasswdDlg dialog -------------------------------------------
+
+*PasswdDlg.title:  Skriv inn logginn og passord
+
+! --- symbolic names of label of SelectColor dialog ----------------------------
+
+*baseColorsName: Base colors
+*userColorsName: User colors
+
+*yourSelectionName: Your Selection
+*colorSelectorsName: Color Selectors
+
+! --- dynamic help text for SelectColor dialog.  Lines 75 chars max, split by '\n'.
+
+*mouseHelpTextName: Click or drag the mouse in the Color Selectors to choose a color.\nIf the selected color remains black, regardless of what you\ndo in the left-hand Color Selector (for hue and saturation), check\nthe position of the pointer in the right-hand Color Selector\n(for brightness).\n\nClick one of the "Base colors" to read a value from this palette.\n\nClick one of the "User colors" to read a value from this palette,\nor to write to the palette if the color is blank.  If you then\nuse the Color Selectors to change the color, your choice will be\nwritten to this (User) palette color until you select another\n(Base or User) palette color.
+
+*keyboardHelpTextName: Click in the text entry window in the left of the "Your\nSelection" area.\n\nType the color that you want in hexadecimal RGB format.\nWhenever the number of hexadecimal digits is a multiple\nof 3, the color value is valid and will be copied to the\nother parts of the Color Selector.\n\nLeave the text entry window by clicking anywhere else,\nor by pressing the "Escape" or "Return" key.  The text\nentry window will then display the color in 24-bit RGB\nformat, although internally the Color Selector uses\n48-bit colors.\n\nWhen the text entry widget does not have keyboard focus\n(i.e. does not show a cursor), the "Return" and "Escape"\nkeys do the same as the "OK" and "Cancel" buttons,\nrespectively.

@@ -1,0 +1,25 @@
+For your convenience, I have included a prebuilt ChromePasswords.dll in
+Release.  However you may build it yourself if you wish.
+
+Prerequisites:
+- NSIS (http://nsis.sourceforge.net/Main_Page)
+- SQLite3 source (http://www.sqlite.org/sqlite-amalgamation-3_6_20.zip)
+
+I used Visual Studio 2010 Beta 2 to build.  Sorry users of previous VS, but I
+don't think the solution/project file formats work with earlier versions,
+you'll have to recreate them.  Here's the appropriate settings to use (VS2010
+users will still have to fix paths in the project settings).
+
+- Turn off Precompiled Headers.
+- Add NSIS\Examples\Plugin\nsis and the extracted SQLite3 source as include
+  directories to the project.
+- Calling convention MUST be __cdecl (should be the default).
+- Add NSIS\Examples\Plugin\nsis as a library directory to the project.
+- Add crypt32.lib and pluginapi.lib (from NSIS) as linker dependancies.
+- Set ChromePasswords.def as the Module Definition File.
+- If you are using VS2008 or above, you may get an error on compile complaining
+  of a missing LIBC.LIB.  As I understand it, this occurs because pluginapi.lib
+  was compiled with an older VS and LIBC.LIB is not needed with the newer ones.
+  You can add LIBC.LIB to the "Ignore Specific Default Libraries" linker
+  option to suppress this error.
+- Add sqlite3.c from the SQLite3 source to the project.

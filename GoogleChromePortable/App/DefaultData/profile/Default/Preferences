@@ -1,0 +1,163 @@
+{
+   "browser": {
+      "check_default_browser": false,
+      "clear_lso_data_enabled": true,
+	  "default_browser_infobar_last_declined":"13135560802000000",
+      "last_known_google_url": "https://www.google.com/",
+      "last_prompted_google_url": "https://www.google.com/",
+      "ntp": {
+         "theme_promo_remaining": -2
+      },
+      "pepper_flash_settings_enabled": true,
+	  "should_reset_check_default_browser":false,
+      "window_placement": {
+         "bottom": 738,
+         "left": 10,
+         "maximized": false,
+         "right": 955,
+         "top": 0,
+         "work_area_bottom": 738,
+         "work_area_left": 0,
+         "work_area_right": 1024,
+         "work_area_top": 0
+      }
+   },
+   "countryid_at_install": 21843,
+   "default_apps_install_state": 2,
+   "default_search_provider": {
+      "id": "2",
+      "prepopulate_id": "1",
+      "suggest_url": "{google:baseSuggestURL}search?client=chrome&hl={language}&q={searchTerms}"
+   },
+   "dns_prefetching": {
+      "host_referral_list": [ 2 ],
+      "startup_list": [ 1, "https://clients2.google.com/", "https://clients2.googleusercontent.com/", "https://www.google.com/" ]
+   },
+   "download": {
+      "directory_upgrade": true,
+      "extensions_to_open": ""
+   },
+   "enhanced_bookmarks_enabled": 0,
+   "extensions": {
+      "alerts": {
+         "initialized": true
+      },
+      "autoupdate": {
+         "next_check": "13056341363909064"
+      },
+      "chrome_url_overrides": {
+         "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
+      },
+      "last_chrome_version": "37.0.2062.120"
+   },
+   "http_throttling": {
+      "enabled": false
+   },
+   "intl": {
+      "accept_languages": "en-US,en"
+   },
+   "invalidator": {
+      "client_id": "WPR/kEKBYQJvDFQytu38qg=="
+   },
+   "media": {
+      "device_id_salt": "hV42eI2dh8XX3Ch/EBuMCg=="
+   },
+   "net": {
+      "http_server_properties": {
+         "servers": {
+            "clients2.google.com:443": {
+               "alternate_protocol": {
+                  "port": 443,
+                  "protocol_str": "quic"
+               },
+               "settings": {
+                  "4": 100
+               },
+               "supports_spdy": true
+            },
+            "clients2.googleusercontent.com:443": {
+               "alternate_protocol": {
+                  "port": 443,
+                  "protocol_str": "quic"
+               },
+               "settings": {
+                  "4": 100
+               },
+               "supports_spdy": true
+            },
+            "www.google.com:443": {
+               "alternate_protocol": {
+                  "port": 443,
+                  "protocol_str": "quic"
+               },
+               "settings": {
+                  "4": 100
+               },
+               "supports_spdy": true
+            }
+         },
+         "version": 3
+      }
+   },
+   "ntp": {
+      "alt_logo_end": 0.0,
+      "alt_logo_resource_server": "https://www.google.com/support/chrome/bin/topic/30248/inproduct",
+      "alt_logo_start": 0.0,
+      "pinned_urls": {
+         "af4775052a19379b5cfb577f90adaf0d": {
+            "direction": "ltr",
+            "index": 0,
+            "title": "PortableApps.com - Portable software for USB drives",
+            "url": "http://portableapps.com/"
+         }
+      },
+      "pref_version": 3,
+      "promo_build": 2,
+      "promo_closed": false,
+      "promo_end": 1316246340.0,
+      "promo_group": 11,
+      "promo_group_max": 1,
+      "promo_group_timeslice": 0,
+      "promo_line": "Like Chrome? You might like the Chromebook, too. \u003Ca href=\"http://www.google.com/chromebook/buynow.html#utm_campaign=en&utm_source=en-ntp-na-us-bkws&utm_medium=ntp\">Learn more.\u003C/a>",
+      "promo_start": 1315641480.0,
+      "shown_sections": 1,
+      "web_resource_cache_update": "1289679884.902772",
+      "webstore_last_promo_id": "1335115"
+   },
+   "plugins": {
+      "enabled_internal_pdf3": true,
+      "enabled_nacl": true,
+      "migrated_to_pepper_flash": true,
+      "plugins_list": [  ],
+      "removed_old_component_pepper_flash_settings": true
+   },
+   "profile": {
+      "avatar_index": 0,
+      "content_settings": {
+         "clear_on_exit_migrated": true,
+         "pattern_pairs": {
+
+         },
+         "pref_version": 1
+      },
+      "exit_type": "Normal",
+      "exited_cleanly": true,
+      "managed_user_id": "",
+      "name": "First user",
+      "per_host_zoom_levels": {
+
+      }
+   },
+   "session": {
+      "restore_on_startup_migrated": true,
+      "startup_urls_migration_time": "13135560802000000"
+   },
+   "tabs": {
+      "use_compact_navigation_bar": false,
+      "use_vertical_tabs": false
+   },
+   "translate_blocked_languages": [ "en" ],
+   "translate_whitelists": {
+
+   }
+}

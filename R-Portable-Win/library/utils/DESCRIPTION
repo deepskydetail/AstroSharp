@@ -1,0 +1,13 @@
+Package: utils
+Version: 4.2.2
+Priority: base
+Title: The R Utils Package
+Author: R Core Team and contributors worldwide
+Maintainer: R Core Team <do-use-Contact-address@r-project.org>
+Contact: R-help mailing list <r-help@r-project.org>
+Description: R utility functions.
+License: Part of R 4.2.2
+Suggests: methods, xml2, commonmark, knitr
+NeedsCompilation: yes
+Built: R 4.2.2; x86_64-w64-mingw32; 2022-10-31 14:25:37 UTC; windows
+ExperimentalWindowsRuntime: ucrt

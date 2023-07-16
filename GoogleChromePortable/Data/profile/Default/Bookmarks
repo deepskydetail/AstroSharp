@@ -1,0 +1,36 @@
+{
+   "checksum": "2cf42d4f179a8b7766a445c1270dd4c0",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13028788410338143",
+            "id": "5",
+            "name": "PortableApps.com",
+            "type": "url",
+            "url": "http://portableapps.com/"
+         } ],
+         "date_added": "0",
+         "date_modified": "13028788410338143",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "0",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13028788397005139",
+         "date_modified": "0",
+         "id": "4",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

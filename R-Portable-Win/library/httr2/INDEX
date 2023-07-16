@@ -1,0 +1,50 @@
+curl_translate          Translate curl syntax to httr2
+jwt_claim               Create and encode a JWT
+last_response           Retrieve most recent request/response
+multi_req_perform       Perform multiple requests in parallel
+oauth_client            Create an OAuth client
+oauth_client_req_auth   OAuth client authentication
+oauth_token             Create an OAuth token
+obfuscate               Obfuscate mildly secret information
+req_auth_basic          Authenticate request with HTTP basic
+                        authentication
+req_auth_bearer_token   Authenticate request with bearer token
+req_body_raw            Send data in request body
+req_cache               Automatically cache requests
+req_dry_run             Perform a dry run
+req_error               Control handling of HTTP errors
+req_headers             Modify request headers
+req_method              Set HTTP method in request
+req_oauth_auth_code     OAuth authentication with authorization code
+req_oauth_bearer_jwt    OAuth authentication with a bearer JWT
+req_oauth_client_credentials
+                        OAuth authentication with client credentials
+req_oauth_device        OAuth authentication with device flow
+req_oauth_password      OAuth authentication with username and password
+req_oauth_refresh       OAuth authentication with a refresh token
+req_options             Set arbitrary curl options in request
+req_perform             Perform a request
+req_proxy               Use a proxy for a request
+req_retry               Control when a request will retry, and how long
+                        it will wait between tries
+req_stream              Perform a request, streaming data back to R
+req_template            Set request method/path from a template
+req_throttle            Throttle a request by automatically adding a
+                        delay
+req_timeout             Set time limit for a request
+req_url                 Modify request URL
+req_user_agent          Set user-agent for a request
+req_verbose             Show extra output when request is performed
+request                 Create a new HTTP request
+resp_body_raw           Extract body from response
+resp_content_type       Extract response content type and encoding
+resp_date               Extract request date from response
+resp_headers            Extract headers from a response
+resp_link_url           Parse link URL from a response
+resp_raw                Show the raw response
+resp_retry_after        Extract wait time from a response
+resp_status             Extract HTTP status from response
+secret_make_key         Secret management
+url_parse               Parse and build URLs
+with_mock               Temporarily mock requests
+with_verbosity          Temporarily set verbosity for all requests

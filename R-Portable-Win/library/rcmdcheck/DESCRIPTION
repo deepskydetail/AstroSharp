@@ -1,0 +1,30 @@
+Package: rcmdcheck
+Title: Run 'R CMD check' from 'R' and Capture Results
+Version: 1.4.0
+Authors@R: 
+    person(given = "Gábor",
+           family = "Csárdi",
+           role = c("cre", "aut"),
+           email = "csardi.gabor@gmail.com")
+Description: Run 'R CMD check' from 'R' and capture the results
+    of the individual checks. Supports running checks in the background,
+    timeouts, pretty printing and comparing check results.
+License: MIT + file LICENSE
+URL: https://r-lib.github.io/rcmdcheck/,
+        https://github.com/r-Lib/rcmdcheck#readme
+BugReports: https://github.com/r-Lib/rcmdcheck/issues
+Imports: callr (>= 3.1.1.9000), cli (>= 3.0.0), curl, desc (>= 1.2.0),
+        digest, pkgbuild, prettyunits, R6, rprojroot, sessioninfo (>=
+        1.1.1), utils, withr, xopen
+Suggests: covr, knitr, mockery, processx, ps, rmarkdown, svglite,
+        testthat, webfakes
+Encoding: UTF-8
+RoxygenNote: 7.1.2
+Config/testthat/edition: 3
+NeedsCompilation: no
+Packaged: 2021-09-23 11:13:42 UTC; gaborcsardi
+Author: Gábor Csárdi [cre, aut]
+Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
+Repository: CRAN
+Date/Publication: 2021-09-27 15:10:02 UTC
+Built: R 4.2.3; ; 2023-03-23 05:24:52 UTC; windows

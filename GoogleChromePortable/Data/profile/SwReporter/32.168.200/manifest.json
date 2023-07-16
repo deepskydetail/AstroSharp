@@ -1,0 +1,21 @@
+{
+  "launch_params": [
+    {
+      "allow-reporter-logs": true,
+      "arguments": [],
+      "prompt": false,
+      "suffix": "URZA"
+    },
+    {
+      "allow-reporter-logs": true,
+      "arguments": [
+        "--engine=2"
+      ],
+      "prompt": true,
+      "suffix": "ESET"
+    }
+  ],
+  "manifest_version": 2,
+  "name": "Software Reporter Tool",
+  "version": "32.168.200"
+}

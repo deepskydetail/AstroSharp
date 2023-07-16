@@ -1,0 +1,186 @@
+%inr%                   Check that value is in a range
+FFT                     Compute the Discrete Fourier Transform of an
+                        image
+RGBtoHSL                Colour space conversions in imager
+RasterPackage           Convert a RasterLayer/RasterBrick to a cimg
+                        image/image list
+add.colour              Add colour channels to a grayscale image or
+                        pixel set
+as.cimg                 Convert to cimg object
+as.cimg.array           Turn an numeric array into a cimg object
+as.cimg.data.frame      Create an image from a data.frame
+as.cimg.function        Create an image by sampling a function
+as.cimg.raster          Convert a raster object to a cimg object
+as.data.frame.cimg      Convert a pixel image to a data.frame
+as.data.frame.imlist    Convert image list to data.frame
+as.data.frame.pixset    Methods to convert pixsets to various objects
+as.igraph.cimg          Form a graph from an image
+as.igraph.pixset        Form an adjacency graph from a pixset
+as.imlist.list          Convert various objects to image lists
+as.pixset               Methods to convert various objects to pixsets
+as.raster.cimg          Convert a cimg object to a raster object for
+                        plotting
+at                      Return or set pixel value at coordinates
+autocrop                Autocrop image region
+bbox                    Compute the bounding box of a pixset
+blur_anisotropic        Blur image anisotropically, in an
+                        edge-preserving way.
+boats                   Photograph of sailing boats from Kodak set
+boundary                Find the boundary of a shape in a pixel set
+boxblur                 Blur image with a box filter (square window)
+boxblur_xy              Blur image with a box filter.
+bucketfill              Bucket fill
+cannyEdges              Canny edge detector
+capture.plot            Capture the current R plot device as a cimg
+                        image
+center.stencil          Center stencil at a location
+channels                Split a colour image into a list of separate
+                        channels
+ci                      Concatenation for image lists
+cimg                    Create a cimg object
+cimg.dimensions         Image dimensions
+cimg.extract            Various shortcuts for extracting colour
+                        channels, frames, etc
+cimg.use.openmp         Control CImg's parallelisation
+cimg2im                 Convert cimg to spatstat im object
+circles                 Add circles to plot
+clean                   Clean up and fill in pixel sets (morphological
+                        opening and closing)
+colorise                Fill in a colour in an area given by a pixset
+common_pixsets          Various useful pixsets
+contours                Return contours of image/pixset
+coord.index             Coordinates from pixel index
+correlate               Correlation/convolution of image by filter
+crop.borders            Crop the outer margins of an image
+deriche                 Apply recursive Deriche filter.
+diffusion_tensors       Compute field of diffusion tensors for
+                        edge-preserving smoothing.
+displacement            Estimate displacement field between two images.
+display                 Display object using CImg library
+display.cimg            Display image using CImg library
+display.list            Display image list using CImg library
+distance_transform      Compute Euclidean distance function to a
+                        specified value.
+draw_circle             Draw circle on image
+draw_rect               Draw rectangle on image
+draw_text               Draw text on an image
+erode                   Erode/dilate image by a structuring element.
+extract_patches         Extract image patches and return a list
+flatten.alpha           Flatten alpha channel
+frames                  Split a video into separate frames
+get.locations           Return coordinates of subset of pixels
+get.stencil             Return pixel values in a neighbourhood defined
+                        by a stencil
+get_gradient            Compute image gradient.
+get_hessian             Return image hessian.
+grab                    Select image regions interactively
+grayscale               Convert an RGB image to grayscale
+grow                    Grow/shrink a pixel set
+gsdim                   Grayscale dimensions of image
+haar                    Compute Haar multiscale wavelet transform.
+highlight               Highlight pixel set on image
+hough_circle            Circle detection using Hough transform
+hough_line              Hough transform for lines
+idply                   Split an image along axis, map function, return
+                        a data.frame
+iiply                   Split an image, apply function, recombine the
+                        results as an image
+ilply                   Split an image along axis, apply function,
+                        return a list
+im2cimg                 Convert an image in spatstat format to an image
+                        in cimg format
+im_split                Split an image along a certain axis (producing
+                        a list)
+imager                  imager: an R library for image processing,
+                        based on CImg
+imager.combine          Combining images
+imager.replace          Replace part of an image with another
+imager.subset           Array subset operator for cimg objects
+imappend                Combine a list of images into a single image
+imchange                Modify parts of an image
+imcoord                 Coordinates as images
+imdirac                 Generates a "dirac" image, i.e. with all values
+                        set to 0 except one.
+imdraw                  Draw image on another image
+imeval                  Evaluation in an image context
+imfill                  Create an image of custom size by filling in
+                        repeated values
+imgradient              Compute image gradient
+imhessian               Compute image hessian.
+iminfo                  Return information on image file
+imlap                   Compute image Laplacian
+imlist                  Image list
+imnoise                 Generate (Gaussian) white-noise image
+implot                  Plot objects on image using base graphics
+imrep                   Replicate images
+imrotate                Rotate an image along the XY plane.
+imsharpen               Sharpen image.
+imshift                 Shift image content.
+imsplit                 Split an image along a certain axis (producing
+                        a list)
+imsub                   Select part of an image
+imwarp                  Image warping
+index.coord             Linear index in internal vector from pixel
+                        coordinates
+inpaint                 Fill-in NA values in an image
+interact                Build simple interactive interfaces using
+                        imager
+interp                  Interpolate image values
+is.cimg                 Checks that an object is a cimg object
+is.imlist               Check that an object is an imlist object
+is.pixset               Check that an object is a pixset object
+isoblur                 Blur image isotropically.
+label                   Label connected components.
+liply                   Apply function to each element of a list, then
+                        combine the result as an image by appending
+                        along specified axis
+load.dir                Load all images in a directory
+load.example            Load example image
+load.image              Load image from file or URL
+load.video              Load a video using ffmpeg
+magick                  Convert a magick image to a cimg image or image
+                        list and vice versa
+make.video              Make/save a video using ffmpeg
+map_il                  Type-stable map for use with the purrr package
+medianblur              Blur image with the median filter. In a window
+                        of size n x n centered at pixel (x,y), compute
+                        median pixel value over the window. Optionally,
+                        ignore values that are too far from the value
+                        at current pixel.
+mirror                  Mirror image content along specified axis
+mutate_plyr             Mutate a data frame by adding new or replacing
+                        existing columns.
+nfline                  Plot a line, Hesse normal form parameterisation
+pad                     Pad image with n pixels along specified axis
+patch_summary_cimg      Extract a numerical summary from image patches,
+                        using CImg's mini-language Experimental
+                        feature.
+patchstat               Return image patch summary
+periodic.part           Compute the periodic part of an image, using
+                        the periodic/smooth decomposition of Moisan
+                        (2011)
+permute_axes            Permute image axes
+pixel.grid              Return the pixel grid for an image
+pixset                  Pixel sets (pixsets)
+play                    Play a video
+plot.cimg               Display an image using base graphics
+plot.imlist             Plot an image list
+px.flood                Select a region of homogeneous colour
+px.na                   A pixset for NA values
+px.remove_outer         Remove all connected regions that touch image
+                        boundaries
+renorm                  Renormalise image
+resize                  Resize image
+resize_doubleXY         Resize image uniformly
+rm.alpha                Remove alpha channel and store as attribute
+rotate_xy               Rotate image by an arbitrary angle, around a
+                        center point.
+save.image              Save image
+split_connected         Split pixset into connected components
+squeeze                 Remove empty dimensions from an array
+stencil.cross           A cross-shaped stencil
+threshold               Threshold grayscale image
+vanvliet                Young-Van Vliet recursive Gaussian filter.
+warp                    Warp image
+watershed               Compute watershed transform.
+where                   Return locations in pixel set

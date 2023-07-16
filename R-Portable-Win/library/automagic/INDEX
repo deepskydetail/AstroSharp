@@ -1,0 +1,10 @@
+%>%                     Pipe imported from magrittr
+automagic               Automagically install all required R packages
+get_dependent_packages
+                        get packages required to run R code
+get_package_details     get package details
+install_deps_file       Install R packages from a package dependencies
+                        ('deps.yaml') file
+install_package_guess   Install latest version of package from CRAN
+make_deps_file          Make a package dependencies ('deps.yaml') file
+parse_packages          Parse R code for required packages

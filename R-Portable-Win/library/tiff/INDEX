@@ -1,0 +1,2 @@
+readTIFF                Read a bitmap image stored in the TIFF format
+writeTIFF               Write one or more bitmap images in TIFF format

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><title>R: Perform HTTP Requests and Process the Responses</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+<h1> Perform HTTP Requests and Process the Responses
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;httr2&rsquo; version 0.2.2</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="curl_translate.html">curl_help</a></td>
+<td>Translate curl syntax to httr2</td></tr>
+<tr><td style="width: 25%;"><a href="curl_translate.html">curl_translate</a></td>
+<td>Translate curl syntax to httr2</td></tr>
+<tr><td style="width: 25%;"><a href="jwt_claim.html">jwt_claim</a></td>
+<td>Create and encode a JWT</td></tr>
+<tr><td style="width: 25%;"><a href="jwt_claim.html">jwt_encode_hmac</a></td>
+<td>Create and encode a JWT</td></tr>
+<tr><td style="width: 25%;"><a href="jwt_claim.html">jwt_encode_sig</a></td>
+<td>Create and encode a JWT</td></tr>
+<tr><td style="width: 25%;"><a href="last_response.html">last_request</a></td>
+<td>Retrieve most recent request/response</td></tr>
+<tr><td style="width: 25%;"><a href="last_response.html">last_response</a></td>
+<td>Retrieve most recent request/response</td></tr>
+<tr><td style="width: 25%;"><a href="with_mock.html">local_mock</a></td>
+<td>Temporarily mock requests</td></tr>
+<tr><td style="width: 25%;"><a href="multi_req_perform.html">multi_req_perform</a></td>
+<td>Perform multiple requests in parallel</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_client.html">oauth_client</a></td>
+<td>Create an OAuth client</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_client_req_auth.html">oauth_client_req_auth</a></td>
+<td>OAuth client authentication</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_client_req_auth.html">oauth_client_req_auth_body</a></td>
+<td>OAuth client authentication</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_client_req_auth.html">oauth_client_req_auth_header</a></td>
+<td>OAuth client authentication</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_client_req_auth.html">oauth_client_req_auth_jwt_sig</a></td>
+<td>OAuth client authentication</td></tr>
+<tr><td style="width: 25%;"><a href="oauth_token.html">oauth_token</a></td>
+<td>Create an OAuth token</td></tr>
+<tr><td style="width: 25%;"><a href="obfuscate.html">obfuscate</a></td>
+<td>Obfuscate mildly secret information</td></tr>
+<tr><td style="width: 25%;"><a href="obfuscate.html">obfuscated</a></td>
+<td>Obfuscate mildly secret information</td></tr>
+<tr><td style="width: 25%;"><a href="request.html">request</a></td>
+<td>Create a new HTTP request</td></tr>
+<tr><td style="width: 25%;"><a href="req_auth_basic.html">req_auth_basic</a></td>
+<td>Authenticate request with HTTP basic authentication</td></tr>
+<tr><td style="width: 25%;"><a href="req_auth_bearer_token.html">req_auth_bearer_token</a></td>
+<td>Authenticate request with bearer token</td></tr>
+<tr><td style="width: 25%;"><a href="req_body.html">req_body_file</a></td>
+<td>Send data in request body</td></tr>
+<tr><td style="width: 25%;"><a href="req_body.html">req_body_form</a></td>
+<td>Send data in request body</td></tr>
+<tr><td style="width: 25%;"><a href="req_body.html">req_body_json</a></td>
+<td>Send data in request body</td></tr>
+<tr><td style="width: 25%;"><a href="req_body.html">req_body_multipart</a></td>
+<td>Send data in request body</td></tr>
+<tr><td style="width: 25%;"><a href="req_body.html">req_body_raw</a></td>
+<td>Send data in request body</td></tr>
+<tr><td style="width: 25%;"><a href="req_cache.html">req_cache</a></td>
+<td>Automatically cache requests</td></tr>
+<tr><td style="width: 25%;"><a href="req_dry_run.html">req_dry_run</a></td>
+<td>Perform a dry run</td></tr>
+<tr><td style="width: 25%;"><a href="req_error.html">req_error</a></td>
+<td>Control handling of HTTP errors</td></tr>
+<tr><td style="width: 25%;"><a href="req_headers.html">req_headers</a></td>
+<td>Modify request headers</td></tr>
+<tr><td style="width: 25%;"><a href="req_method.html">req_method</a></td>
+<td>Set HTTP method in request</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_auth_code.html">req_oauth_auth_code</a></td>
+<td>OAuth authentication with authorization code</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_bearer_jwt.html">req_oauth_bearer_jwt</a></td>
+<td>OAuth authentication with a bearer JWT</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_client_credentials.html">req_oauth_client_credentials</a></td>
+<td>OAuth authentication with client credentials</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_device.html">req_oauth_device</a></td>
+<td>OAuth authentication with device flow</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_password.html">req_oauth_password</a></td>
+<td>OAuth authentication with username and password</td></tr>
+<tr><td style="width: 25%;"><a href="req_oauth_refresh.html">req_oauth_refresh</a></td>
+<td>OAuth authentication with a refresh token</td></tr>
+<tr><td style="width: 25%;"><a href="req_options.html">req_options</a></td>
+<td>Set arbitrary curl options in request</td></tr>
+<tr><td style="width: 25%;"><a href="req_perform.html">req_perform</a></td>
+<td>Perform a request</td></tr>
+<tr><td style="width: 25%;"><a href="req_proxy.html">req_proxy</a></td>
+<td>Use a proxy for a request</td></tr>
+<tr><td style="width: 25%;"><a href="req_retry.html">req_retry</a></td>
+<td>Control when a request will retry, and how long it will wait between tries</td></tr>
+<tr><td style="width: 25%;"><a href="req_stream.html">req_stream</a></td>
+<td>Perform a request, streaming data back to R</td></tr>
+<tr><td style="width: 25%;"><a href="req_template.html">req_template</a></td>
+<td>Set request method/path from a template</td></tr>
+<tr><td style="width: 25%;"><a href="req_throttle.html">req_throttle</a></td>
+<td>Throttle a request by automatically adding a delay</td></tr>
+<tr><td style="width: 25%;"><a href="req_timeout.html">req_timeout</a></td>
+<td>Set time limit for a request</td></tr>
+<tr><td style="width: 25%;"><a href="req_url.html">req_url</a></td>
+<td>Modify request URL</td></tr>
+<tr><td style="width: 25%;"><a href="req_url.html">req_url_path</a></td>
+<td>Modify request URL</td></tr>
+<tr><td style="width: 25%;"><a href="req_url.html">req_url_path_append</a></td>
+<td>Modify request URL</td></tr>
+<tr><td style="width: 25%;"><a href="req_url.html">req_url_query</a></td>
+<td>Modify request URL</td></tr>
+<tr><td style="width: 25%;"><a href="req_user_agent.html">req_user_agent</a></td>
+<td>Set user-agent for a request</td></tr>
+<tr><td style="width: 25%;"><a href="req_verbose.html">req_verbose</a></td>
+<td>Show extra output when request is performed</td></tr>
+<tr><td style="width: 25%;"><a href="resp_body_raw.html">resp_body_html</a></td>
+<td>Extract body from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_body_raw.html">resp_body_json</a></td>
+<td>Extract body from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_body_raw.html">resp_body_raw</a></td>
+<td>Extract body from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_body_raw.html">resp_body_string</a></td>
+<td>Extract body from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_body_raw.html">resp_body_xml</a></td>
+<td>Extract body from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_status.html">resp_check_status</a></td>
+<td>Extract HTTP status from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_content_type.html">resp_content_type</a></td>
+<td>Extract response content type and encoding</td></tr>
+<tr><td style="width: 25%;"><a href="resp_date.html">resp_date</a></td>
+<td>Extract request date from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_content_type.html">resp_encoding</a></td>
+<td>Extract response content type and encoding</td></tr>
+<tr><td style="width: 25%;"><a href="resp_headers.html">resp_header</a></td>
+<td>Extract headers from a response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_headers.html">resp_headers</a></td>
+<td>Extract headers from a response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_headers.html">resp_header_exists</a></td>
+<td>Extract headers from a response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_status.html">resp_is_error</a></td>
+<td>Extract HTTP status from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_link_url.html">resp_link_url</a></td>
+<td>Parse link URL from a response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_raw.html">resp_raw</a></td>
+<td>Show the raw response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_retry_after.html">resp_retry_after</a></td>
+<td>Extract wait time from a response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_status.html">resp_status</a></td>
+<td>Extract HTTP status from response</td></tr>
+<tr><td style="width: 25%;"><a href="resp_status.html">resp_status_desc</a></td>
+<td>Extract HTTP status from response</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_decrypt</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_encrypt</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_has_key</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_make_key</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_read_rds</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="secrets.html">secret_write_rds</a></td>
+<td>Secret management</td></tr>
+<tr><td style="width: 25%;"><a href="url_parse.html">url_build</a></td>
+<td>Parse and build URLs</td></tr>
+<tr><td style="width: 25%;"><a href="url_parse.html">url_parse</a></td>
+<td>Parse and build URLs</td></tr>
+<tr><td style="width: 25%;"><a href="with_mock.html">with_mock</a></td>
+<td>Temporarily mock requests</td></tr>
+<tr><td style="width: 25%;"><a href="with_verbosity.html">with_verbosity</a></td>
+<td>Temporarily set verbosity for all requests</td></tr>
+</table>
+</div></body></html>
