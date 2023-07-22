@@ -1,0 +1,69 @@
+! ------------------------------------------------------------------------------
+!  fr.rc
+!  This file is part of Unifix BWidget Toolkit
+!  Definition of french resources
+! ------------------------------------------------------------------------------
+
+
+! --- symbolic names of buttons ------------------------------------------------
+
+*abortName:    A&bandonner
+*retryName:    &Réessayer
+*ignoreName:   &Ignorer
+*okName:       &OK
+*cancelName:   &Annuler
+*yesName:      &Oui
+*noName:       &Non
+
+
+! --- symbolic names of label of SelectFont dialog ----------------------------
+
+*boldName:          &Gras
+*italicName:        &Italique
+*underlineName:     &Souligné
+*overstrikeName:    &Barré
+*fontName:          &Police
+*sizeName:          &Taille
+*styleName:         St&yle
+*colorPickerName:   &Couleur...
+
+
+! --- symbolic names of label of PasswdDlg dialog -----------------------------
+
+*loginName:    Nom de l'&utilisateur
+*passwordName: Mot de &passe
+
+
+! --- resource for SelectFont dialog ------------------------------------------
+
+*SelectFont.title:        Sélection d'une police
+*SelectFont.sampletext:	  Texte d'exemple
+
+
+! --- resource for MessageDlg dialog ------------------------------------------
+
+*MessageDlg.noneTitle:      Message
+*MessageDlg.infoTitle:      Information
+*MessageDlg.questionTitle:  Question
+*MessageDlg.warningTitle:   Attention
+*MessageDlg.errorTitle:     Erreur
+
+! --- resource for PasswdDlg dialog -------------------------------------------
+
+*PasswdDlg.title:  Entrez le login et le mot de passe
+
+! --- symbolic names of label of SelectColor dialog ----------------------------
+
+*baseColorsName: Couleurs de base
+*userColorsName: Couleurs utilisateur
+
+*yourSelectionName: Votre sélection
+*colorSelectorsName: Sélecteur de couleurs
+
+! --- dynamic help text for SelectColor dialog.  Lines 75 chars max, split by '\n'.
+
+
+*mouseHelpTextName: Cliquez ou déplacez la souris dans la palette pour choisir une couleur.\nSi la couleur affichée reste noire quelle que soit la sélection dans la palette (teinte et\nsaturation), vérifiez la position du pointeur dans le sélecteur de droite (luminosité).\n\nCliquez sur l'une des "Couleurs de base" pour la sélectionner.\n\nCliquez sur l'une des "Couleurs utilisateurs" pour la sélectionner, ou pour la\nsauver dans la palette utilisateur dans une case blanche. Les modifications via le\nsélecteur de couleurs sont alors propagées dans la case sélectionnée de la palette\nutilisateur jusqu'à ce qu'une autre couleur (de base ou utilisateur) soit sélectionnée.
+
+*keyboardHelpTextName: Cliquez dans la zone de saisie à gauche, dans la zone "Votre sélection".\n\nEntrez la couleur désirée au format RGB hexadécimal.\nLa valeur est validée lorsque le nombre de chiffres hexadécimaux est un multiple de 3.\nElle est alors propagée aux autres zones du sélecteur de couleurs.\n\nLa zone de saisie peut être quittée en cliquant n'importe où ailleurs ou en appuyant sur la\ntouche "Escape" ou "Entrée" du clavier. Bien que le sélecteur de couleurs utilise\n48 bits en interne, la zone de saisie affichera alors la couleur au format RGB en\nhexadécimal sur 24 bits.\n\nLorsque la zone de saisie n'a pas le focus (i.e. ne montre pas le curseur), les touches\n"Entrée" et "Escape" ont la même fonction que les boutons "OK" et "Annuler" respectivement.
+

@@ -1,0 +1,99 @@
+FSfarras                Farras nearly symmetric filters
+acvs.andel8             Autocovariance and Autocorrelation Sequences
+                        for a Seasonal Persistent Process
+afb                     Filter Banks for Dual-Tree Wavelet Transforms
+ar1                     Simulated AR(1) Series
+bandpass.var.spp        Bandpass Variance for Long-Memory Processes
+barbara                 Barbara Test Image
+basis                   Produce Boolean Vector from Wavelet Basis Names
+blocks                  A Piecewise-Constant Function
+brick.wall              Replace Boundary Wavelet Coefficients with
+                        Missing Values
+convolve2D              Fast Column-wise Convolution of a Matrix
+cpi                     U.S. Consumer Price Index
+cplxdual2D              Dual-tree Complex 2D Discrete Wavelet Transform
+cshift                  Miscellaneous Functions for Dual-Tree Wavelet
+                        Software
+css.test                Testing the Wavelet Packet Tree for White Noise
+dau                     Digital Photograph of Ingrid Daubechies
+denoise.dwt.2d          Denoise an Image via the 2D Discrete Wavelet
+                        Transform
+doppler                 Sinusoid with Changing Amplitude and Frequency
+dpss.taper              Calculating Thomson's Spectral Multitapers by
+                        Inverse Iteration
+dualfilt1               Kingsbury's Q-filters for the Dual-Tree Complex
+                        DWT
+dualtree                Dual-tree Complex Discrete Wavelet Transform
+dwpt                    (Inverse) Discrete Wavelet Packet Transforms
+dwpt.2d                 (Inverse) Discrete Wavelet Packet Transforms in
+                        Two Dimensions
+dwpt.boot               Bootstrap Time Series Using the DWPT
+dwpt.sim                Simulate Seasonal Persistent Processes Using
+                        the DWPT
+dwt                     Discrete Wavelet Transform (DWT)
+dwt.2d                  Two-Dimensional Discrete Wavelet Transform
+dwt.3d                  Three Dimensional Separable Discrete Wavelet
+                        Transform
+dwt.hilbert             Discrete Hilbert Wavelet Transforms
+exchange                Exchange Rates Between the Deutsche Mark,
+                        Japanese Yen and U.S. Dollar
+fdp.mle                 Wavelet-based Maximum Likelihood Estimation for
+                        a Fractional Difference Process
+fdp.sdf                 Spectral Density Functions for Long-Memory
+                        Processes
+find.adaptive.basis     Determine an Orthonormal Basis for the Discrete
+                        Wavelet Packet Transform
+heavisine               Sine with Jumps at 0.3 and 0.72
+hilbert.filter          Select a Hilbert Wavelet Pair
+hosking.sim             Generate Stationary Gaussian Process Using
+                        Hosking's Method
+ibm                     Daily IBM Stock Prices
+japan                   Japanese Gross National Product
+jumpsine                Sine with Jumps at 0.625 and 0.875
+kobe                    1995 Kobe Earthquake Data
+linchirp                Linear Chirp
+manual.thresh           Wavelet Shrinkage via Thresholding
+mexm                    Mexican Money Supply
+modhwt.coh              Time-varying and Seasonal Analysis Using
+                        Hilbert Wavelet Pairs
+modwt                   (Inverse) Maximal Overlap Discrete Wavelet
+                        Transform
+modwt.2d                Two-Dimensional Maximal Overlap Discrete
+                        Wavelet Transform
+modwt.3d                Three Dimensional Separable Maximal Ovelrap
+                        Discrete Wavelet Transform
+mra                     Multiresolution Analysis of Time Series
+mra.2d                  Multiresolution Analysis of an Image
+mra.3d                  Three Dimensional Multiresolution Analysis
+mult.loc                Wavelet-based Testing and Locating for Variance
+                        Change Points
+my.acf                  Autocovariance Functions via the Discrete
+                        Fourier Transform
+nile                    Nile River Minima
+ortho.basis             Derive Orthonormal Basis from Wavelet Packet
+                        Tree
+per                     Periodogram
+phase.shift             Phase Shift Wavelet Coefficients
+phase.shift.hilbert     Phase Shift for Hilbert Wavelet Coefficients
+plot.dwt.2d             Plot Two-dimensional Discrete Wavelet Transform
+qmf                     Quadrature Mirror Filter
+rotcumvar               Rotated Cumulative Variance
+shift.2d                Circularly Shift Matrices from a 2D MODWT
+sine.taper              Computing Sinusoidal Data Tapers
+spin.covariance         Compute Wavelet Cross-Covariance Between Two
+                        Time Series
+spp.mle                 Wavelet-based Maximum Likelihood Estimation for
+                        Seasonal Persistent Processes
+spp.var                 Variance of a Seasonal Persistent Process
+squared.gain            Squared Gain Function of a Filter
+stackPlot               Stack Plot
+testing.hov             Testing for Homogeneity of Variance
+tourism                 U.S. Tourism
+unemploy                U.S. Unemployment
+up.sample               Upsampling of a vector
+wave.filter             Select a Wavelet Filter
+wave.variance           Wavelet Analysis of Univariate/Bivariate Time
+                        Series
+wave.variance.2d        Wavelet Analysis of Images
+wavelet.filter          Higher-Order Wavelet Filters
+xbox                    Image with Box and X

@@ -1,0 +1,60 @@
+Package: Matrix
+Version: 1.5-3
+Date: 2022-11-09
+Priority: recommended
+Title: Sparse and Dense Matrix Classes and Methods
+Contact: Matrix-authors@R-project.org
+Maintainer: Martin Maechler <mmaechler+Matrix@gmail.com>
+Authors@R: c(person("Douglas", "Bates", role = "aut")
+ , person("Martin", "Maechler", role = c("aut", "cre"),
+          email = "mmaechler+Matrix@gmail.com",
+          comment = c(ORCID = "0000-0002-8685-9910"))
+ , person("Mikael", "Jagan", role = "aut",
+          comment = c(ORCID = "0000-0002-3542-2938"))
+ , person("Timothy A.", "Davis", role = "ctb",
+          comment = c("SuiteSparse and 'cs' C libraries, notably CHOLMOD and AMD",
+	              "collaborators listed in dir(pattern=\"^[A-Z]+[.]txt$\", full.names=TRUE, system.file(\"doc\", \"SuiteSparse\", package=\"Matrix\"))"))
+ , person("Jens", "Oehlschlägel", role = "ctb",
+          comment = "initial nearPD()")
+ , person("Jason", "Riedy", role = "ctb",
+          comment = c("condest() and onenormest() for octave",
+ 	  	      "Copyright: Regents of the University of California"))
+ , person("R Core Team", role = "ctb",
+          comment = "base R matrix implementation")
+ )
+Description: A rich hierarchy of matrix classes, including triangular,
+   symmetric, and diagonal matrices, both dense and sparse and with
+   pattern, logical and numeric entries.   Numerous methods for and
+   operations on these matrices, using 'LAPACK' and 'SuiteSparse' libraries.
+Depends: R (>= 3.5.0), methods
+Imports: graphics, grid, lattice, stats, utils
+Suggests: expm, MASS
+Enhances: MatrixModels, graph, SparseM, sfsmisc, igraph, maptools, sp,
+        spdep
+EnhancesNote: line 2: for "Rd xrefs"
+Encoding: UTF-8
+LazyData: no
+LazyDataNote: not possible, since we use data/*.R *and* our classes
+BuildResaveData: no
+License: GPL (>= 2) | file LICENCE
+URL: https://Matrix.R-forge.R-project.org/,
+        https://Matrix.R-forge.R-project.org/doxygen/
+BugReports: https://R-forge.R-project.org/tracker/?atid=294&group_id=61
+NeedsCompilation: yes
+Packaged: 2022-11-10 14:57:57 UTC; maechler
+Author: Douglas Bates [aut],
+  Martin Maechler [aut, cre] (<https://orcid.org/0000-0002-8685-9910>),
+  Mikael Jagan [aut] (<https://orcid.org/0000-0002-3542-2938>),
+  Timothy A. Davis [ctb] (SuiteSparse and 'cs' C libraries, notably
+    CHOLMOD and AMD, collaborators listed in
+    dir(pattern="^[A-Z]+[.]txt$", full.names=TRUE, system.file("doc",
+    "SuiteSparse", package="Matrix"))),
+  Jens Oehlschlägel [ctb] (initial nearPD()),
+  Jason Riedy [ctb] (condest() and onenormest() for octave, Copyright:
+    Regents of the University of California),
+  R Core Team [ctb] (base R matrix implementation)
+Repository: CRAN
+Date/Publication: 2022-11-11 08:30:10 UTC
+Built: R 4.2.3; x86_64-w64-mingw32; 2023-03-23 03:12:05 UTC; windows
+ExperimentalWindowsRuntime: ucrt
+Archs: x64

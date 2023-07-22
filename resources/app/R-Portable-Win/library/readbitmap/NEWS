@@ -1,0 +1,31 @@
+readbitmap 0.1-4.9000
+=====================
+* Added functionality for handling TIFFs. This addressed [#3](https://github.com/jefferis/readbitmap/issues/3).
+
+readbitmap 0.1-4
+================
+* examples for image_type, read.bitmap
+* some tidying of DESCRIPTION in response to comments from Brian Ripley
+* Add an INSTALL file with improved details about installing libpng/libjpeg 
+  system libraries when necessary (almost never)
+
+readbitmap 0.1-3
+================
+* Import rather than depend on bmp/jpeg/png packages
+* (and in so doing fix check error due to missing imports)
+* clarify system requirements in DESCRIPTION
+* add basic package docs
+* dev: move tests to new location to make their installation optional
+* dev: upgrade to roxygen2 v4
+
+readbitmap 0.1-2
+==============
+* Update README.md for CRAN
+
+readbitmap 0.1-1
+==============
+* Give appropriate error message when trying to read unsupported file.
+
+readbitmap 0.1
+==============
+* first version on CRAN

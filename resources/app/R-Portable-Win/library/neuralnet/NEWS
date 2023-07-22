@@ -1,0 +1,28 @@
+
+##### Version 1.44.6
+* Bug fixes
+
+##### Version 1.44.5
+* Allow prediction with NA weights (set to 0 as in old version)
+* Fix prediction for networks grown with older versions
+
+##### Version 1.44.4
+* Add ReLu activation function
+
+##### Version 1.44.3
+* Bug fixes
+
+##### Version 1.44.2
+* Make compute() return the same as in previous versions
+* Soft-deprecate compute() for now
+
+##### Version 1.44.1
+* Add support for dots in formula
+* Allow direct multiclass outcomes with factors
+
+##### Version 1.44.0
+* New maintainer: Marvin N.Wright
+* Add a predict() function to replace compute()
+* Use Deriv package for symbolic derivation
+* Many internal changes to improve code quality
+* Bug fixes
