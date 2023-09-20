@@ -1,0 +1,26 @@
+Package: anytime
+Type: Package
+Title: Anything to 'POSIXct' or 'Date' Converter
+Version: 0.3.9
+Date: 2020-08-26
+Author: Dirk Eddelbuettel
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Description: Convert input in any one of character, integer, numeric, factor,
+ or ordered type into 'POSIXct' (or 'Date') objects, using one of a number of
+ predefined formats, and relying on Boost facilities for date and time parsing.
+URL: http://dirk.eddelbuettel.com/code/anytime.html
+BugReports: https://github.com/eddelbuettel/anytime/issues
+License: GPL (>= 2)
+Encoding: UTF-8
+Depends: R (>= 3.2.0)
+Imports: Rcpp (>= 0.12.9)
+LinkingTo: Rcpp (>= 0.12.9), BH
+Suggests: tinytest (>= 1.0.0), gettz
+RoxygenNote: 6.0.1
+NeedsCompilation: yes
+Packaged: 2020-08-26 17:46:45.898451 UTC; edd
+Repository: CRAN
+Date/Publication: 2020-08-27 11:40:21 UTC
+Built: R 4.2.3; x86_64-w64-mingw32; 2023-09-18 01:25:58 UTC; windows
+ExperimentalWindowsRuntime: ucrt
+Archs: x64

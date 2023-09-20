@@ -1,0 +1,41 @@
+Package: shinyWidgets
+Title: Custom Inputs Widgets for Shiny
+Version: 0.8.0
+Authors@R: c(
+  person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre", "cph")),
+  person("Fanny", "Meyer", role = "aut"),
+  person("David", "Granjon", role = "aut"),
+  person("Ian", "Fellows", role = "ctb", comment = "Methods for mutating vertical tabs & updateMultiInput"),
+  person("Wil", "Davis", role = "ctb", comment = "numericRangeInput function"),
+  person("Spencer", "Matthews", role = "ctb", comment = "autoNumeric methods"),
+  person(family = "JavaScript and CSS libraries authors", role = c("ctb", "cph"), comment = "All authors are listed in LICENSE.md")
+  )
+Description: Collection of custom input controls and user interface components for 'Shiny' applications. 
+  Give your applications a unique and colorful style !
+URL: https://github.com/dreamRs/shinyWidgets,
+        https://dreamrs.github.io/shinyWidgets/
+BugReports: https://github.com/dreamRs/shinyWidgets/issues
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Depends: R (>= 3.1.0)
+Imports: anytime, bslib, sass, shiny (>= 1.6.0), htmltools (>= 0.5.1),
+        jsonlite, grDevices, rlang
+Suggests: testthat, covr, ggplot2, DT, scales, shinydashboard,
+        shinydashboardPlus
+NeedsCompilation: no
+Packaged: 2023-08-30 14:04:56 UTC; victorp
+Author: Victor Perrier [aut, cre, cph],
+  Fanny Meyer [aut],
+  David Granjon [aut],
+  Ian Fellows [ctb] (Methods for mutating vertical tabs &
+    updateMultiInput),
+  Wil Davis [ctb] (numericRangeInput function),
+  Spencer Matthews [ctb] (autoNumeric methods),
+  JavaScript and CSS libraries authors [ctb, cph] (All authors are listed
+    in LICENSE.md)
+Maintainer: Victor Perrier <victor.perrier@dreamrs.fr>
+Repository: CRAN
+Date/Publication: 2023-08-30 15:00:02 UTC
+Built: R 4.2.3; ; 2023-09-18 02:30:55 UTC; windows
