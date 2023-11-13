@@ -1,0 +1,27 @@
+Package: doParallel
+Type: Package
+Title: Foreach Parallel Adaptor for the 'parallel' Package
+Version: 1.0.17
+Authors@R: c(person("Folashade", "Daniel", role="cre", email="fdaniel@microsoft.com"),
+             person("Microsoft", "Corporation", role=c("aut", "cph")),
+             person("Steve", "Weston", role="aut"),
+             person("Dan", "Tenenbaum", role="ctb"))
+Description: Provides a parallel backend for the %dopar% function using
+        the parallel package.
+Depends: R (>= 2.14.0), foreach (>= 1.2.0), iterators (>= 1.0.0),
+        parallel, utils
+Suggests: caret, mlbench, rpart, RUnit
+Enhances: compiler
+License: GPL-2
+URL: https://github.com/RevolutionAnalytics/doparallel
+BugReports: https://github.com/RevolutionAnalytics/doparallel/issues
+NeedsCompilation: no
+Packaged: 2022-01-16 17:54:13 UTC; folashade
+Author: Folashade Daniel [cre],
+  Microsoft Corporation [aut, cph],
+  Steve Weston [aut],
+  Dan Tenenbaum [ctb]
+Maintainer: Folashade Daniel <fdaniel@microsoft.com>
+Repository: CRAN
+Date/Publication: 2022-02-07 12:50:02 UTC
+Built: R 4.2.3; ; 2023-09-18 01:25:09 UTC; windows

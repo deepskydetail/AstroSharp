@@ -1,0 +1,10 @@
+bibentry(bibtype="Article",
+         header="To cite 'igraph' in publications use:",
+         title="The igraph software package for complex network research",
+         author=c(as.person("Gabor Csardi"), as.person("Tamas Nepusz")),
+         journal="InterJournal",
+         volume="Complex Systems",
+         pages="1695",
+         year=2006,
+         url="https://igraph.org")
+

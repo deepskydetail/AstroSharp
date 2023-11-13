@@ -1,0 +1,8 @@
+anytime                 Parse POSIXct or Date objects from input data
+anytime-package         Anything to 'POSIXct' or 'Date' Converter
+assertDate              Convert to Date (or POSIXct) and assert
+                        successful conversion
+getFormats              Functions to retrieve, set or remove formats
+                        used for parsing dates.
+iso8601                 Format a Datetime object: ISO 8601, RFC 2822 or
+                        RFC 3339

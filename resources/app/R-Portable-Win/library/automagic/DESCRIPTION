@@ -1,0 +1,27 @@
+Package: automagic
+Type: Package
+Title: Automagically Document and Install Packages Necessary to Run R
+        Code
+Version: 0.5.1
+Authors@R: c(
+    person("Cole", "Brokamp",
+    email = "cole.brokamp@gmail.com", role = c("aut", "cre")),
+    person("Steph", "Locke", role = "ctb"))
+Description: Parse R code in a given directory for R packages and attempt to install them from CRAN or GitHub. Optionally use a dependencies file for tighter control over which package versions to install.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Depends: R (>= 3.1.0)
+Imports: dplyr, formatR, knitr, magrittr, purrr, remotes, yaml
+URL: https://github.com/cole-brokamp/automagic
+BugReports: https://github.com/cole-brokamp/automagic/issues
+Suggests: testthat
+NeedsCompilation: no
+Packaged: 2019-03-05 21:23:46 UTC; cole
+Author: Cole Brokamp [aut, cre],
+  Steph Locke [ctb]
+Maintainer: Cole Brokamp <cole.brokamp@gmail.com>
+Repository: CRAN
+Date/Publication: 2019-03-05 21:30:22 UTC
+Built: R 4.2.3; ; 2023-03-23 03:52:09 UTC; windows

@@ -1,0 +1,45 @@
+Package: neuralnet
+Type: Package
+Title: Training of Neural Networks
+Version: 1.44.6
+Date: 2019-04-17
+Authors@R: c(
+    person(given="Stefan", family="Fritsch", role="aut"), 
+    person(given="Frauke", family="Guenther", role=c("aut")),
+    person(given="Marvin N.", family="Wright", role=c("aut","cre"),email="wright@leibniz-bips.de"),
+    person(given="Marc", family="Suling", role="ctb"),	
+    person(given="Sebastian M.", family="Mueller", role = "ctb"))
+Depends: R (>= 2.9.0)
+Imports: grid, MASS, grDevices, stats, utils, Deriv
+Description: Training of neural networks using backpropagation,
+    resilient backpropagation with (Riedmiller, 1994) or without
+    weight backtracking (Riedmiller and Braun, 1993) or the
+    modified globally convergent version by Anastasiadis et al.
+    (2005). The package allows flexible settings through
+    custom-choice of error and activation function. Furthermore,
+    the calculation of generalized weights (Intrator O & Intrator
+    N, 1993) is implemented.
+License: GPL (>= 2)
+Suggests: testthat
+URL: https://github.com/bips-hb/neuralnet
+BugReports: https://github.com/bips-hb/neuralnet/issues
+RoxygenNote: 6.1.0
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: neuralnet
+RemoteUsername: bips-hb
+RemoteRef: HEAD
+RemoteSha: 09815356b9aea12f184ff91f0389e94321a99f3e
+GithubRepo: neuralnet
+GithubUsername: bips-hb
+GithubRef: HEAD
+GithubSHA1: 09815356b9aea12f184ff91f0389e94321a99f3e
+NeedsCompilation: no
+Packaged: 2023-03-25 23:20:51 UTC; Mark
+Author: Stefan Fritsch [aut],
+  Frauke Guenther [aut],
+  Marvin N. Wright [aut, cre],
+  Marc Suling [ctb],
+  Sebastian M. Mueller [ctb]
+Maintainer: Marvin N. Wright <wright@leibniz-bips.de>
+Built: R 4.2.2; ; 2023-03-25 23:20:52 UTC; windows

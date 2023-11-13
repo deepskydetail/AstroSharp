@@ -1,0 +1,8 @@
+bibentry(bibtype = "Manual",
+         title = "{Deriv}: R-based Symbolic Differentiation",
+         author = c(person(given="Andrew", family="Clausen"),
+                    person(given="Serguei", family="Sokol")),
+         year = 2020,
+         note = "Deriv package version 4.1",
+         url = "https://CRAN.R-project.org/package=Deriv"
+)

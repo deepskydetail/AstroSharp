@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>(R)Markdown support</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">(R)Markdown support</h1>
+
+
+
+<p>We expect most roxygen2 users will write documentation using markdown
+rather than Rd syntax, since it’s familiar, and doesn’t require learning
+any new syntax. In most cases, you can just use your existing RMarkdown
+knowledge and it’ll work as you expect. When it doesn’t, you can read
+this vignette to figure out what’s going on and how to fix it.</p>
+<div id="enabling-markdown-support" class="section level2">
+<h2>Enabling markdown support</h2>
+<p>To turn on Markdown support for a package, insert this entry into the
+<code>DESCRIPTION</code> file of the package:</p>
+<pre><code>Roxygen: list(markdown = TRUE)</code></pre>
+<p>If you use devtools/usethis, this will be automatically inserted for
+you when you create a new package. If you’re updating an existing
+package, we recommend <code>usethis::use_roxygen_md()</code> which will
+modify the <code>DESCRIPTION</code> and prompt you to use the <a href="https://roxygen2md.r-lib.org">roxygen2md</a> package to convert
+your existing docs.</p>
+<p>If needed, you can also use <code>@md</code> or <code>@noMd</code> to
+turn markdown support on or off for a documentation block.</p>
+<p>Here is an example roxygen chunk that uses Markdown.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Use roxygen to document a package</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; This function is a wrapper for the [roxygen2::roxygenize()] function from</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; the roxygen2 package. See the documentation and vignettes of</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; that package to learn how to use roxygen.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param pkg package description, can be path or package name.  See</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   [as.package()] for more information.</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param clean,reload Deprecated.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @inheritParams roxygen2::roxygenise</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @seealso [roxygen2::roxygenize()], `browseVignettes(&quot;roxygen2&quot;)`</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span></code></pre></div>
+</div>
+<div id="basic-syntax" class="section level2">
+<h2>Basic syntax</h2>
+<p>roxygen uses the <a href="https://github.com/r-lib/commonmark">commonmark package</a>, based
+on the “CommonMark Reference Implementation”. See <a href="https://commonmark.org/help/" class="uri">https://commonmark.org/help/</a> for more about the parser
+and the markdown language it supports. The most important details are
+described below.</p>
+<div id="sections-and-subsections" class="section level3">
+<h3>Sections and subsections</h3>
+<p>The usual Markdown heading markup creates sections and subsections.
+Top level headings (e.g. <code># title</code>) create sections with the
+<code>\section{}</code> Rd tag. This largely supersedes use of the older
+<code>@section</code> tag.</p>
+<p>Top-level headings can only appear after the
+<code>@description</code> and <code>@details</code> tags. Since
+<code>@details</code> can appear multiple times in a block, you can
+always precede a ‘<code>#</code>’ section with <code>@details</code>, if
+you want put it near the end of the block, after <code>@return</code>
+for example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @details</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Trim the leading and trailing whitespace from a character vector.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x Character vector.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return Character vector, with the whitespace trimmed.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @details # This will be a new section</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ...</span></span></code></pre></div>
+<p>Top level sections are placed at a fixed position in the manual page,
+after the parameters and the details, but before <code>\note{}</code>,
+<code>\seealso{}</code> and the <code>\examples{}</code>. Their order
+will be the same as in the roxygen block.</p>
+<p>Headings at level two and above may appear inside any roxygen tag
+that formats lines of text, e.g. <code>@description</code>,
+<code>@details</code>, <code>@return</code>, and create subsections with
+the <code>\subsection{}</code> Rd tag.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @details</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ## Subsection within details</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span><span class="al">###</span><span class="co"> Sub-subsection</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ... text ...</span></span></code></pre></div>
+</div>
+<div id="inline-formatting" class="section level3">
+<h3>Inline formatting</h3>
+<p>For <em>emphasis</em>, put the text between asterisks or underline
+characters. For <strong>strong</strong> text, use two asterisks at both
+sides.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @references</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Robert E Tarjan and Mihalis Yannakakis. (1984). Simple</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; linear-time algorithms to test chordality of graphs, test acyclicity</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; of hypergraphs, and selectively reduce acyclic hypergraphs.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; *SIAM Journal of Computation* **13**, 566-579.</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; See `::is_falsy` for the definition of what is _falsy_</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; and what is _truthy_.</span></span></code></pre></div>
+</div>
+<div id="code" class="section level3">
+<h3>Code</h3>
+<p>Inline code is supported via backticks.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ns Optionally, a named vector giving prefix-url pairs, as</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   produced by `xml_ns`. If provided, all names will be explicitly</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   qualified with the ns prefix, i.e. if the element `bar` is defined ...</span></span></code></pre></div>
+<p>For blocks of code, put your code between triple backticks:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; pkg &lt;- make_packages(</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   foo1 = { f &lt;- function() print(&quot;hello!&quot;) ; d &lt;- 1:10 },</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   foo2 = { f &lt;- function() print(&quot;hello again!&quot;) ; d &lt;- 11:20 }</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; )</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; foo1::f()</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; foo2::f()</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; foo1::d</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; foo2::d</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; dispose_packages(pkg)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```</span></span></code></pre></div>
+<p>You can also include executable code chunks using the usual knitr
+syntax. See below for more details.</p>
+</div>
+<div id="lists" class="section level3">
+<h3>Lists</h3>
+<p>Regular Markdown lists are recognized and converted to
+<code>\enumerate{}</code> or <code>\itemize{}</code> lists:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; There are two ways to use this function:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; 1. If its first argument is not named, then it returns a function</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;    that can be used to color strings.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; 1. If its first argument is named, then it also creates a</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;    style with the given name. This style can be used in</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;    `style`. One can still use the return value</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;    of the function, to create a style function.</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; The style (the `...` argument) can be anything of the</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; following:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; * An R color name, see `colors()`.</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; * A 6- or 8-digit hexa color string, e.g. `#ff0000` means</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   red. Transparency (alpha channel) values are ignored.</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; * A one-column matrix with three rows for the red, green,</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   and blue channels, as returned by [grDevices::col2rgb()].</span></span></code></pre></div>
+<p>Note that you do not have to leave an empty line before the list.
+This is different from some Markdown parsers.</p>
+</div>
+<div id="tables" class="section level3">
+<h3>Tables</h3>
+<p>Use <a href="https://github.github.com/gfm/#tables-extension-">GFM
+table formatting</a>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>| foo | bar |</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>| --- | --- |</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>| baz | bim |</span></code></pre></div>
+<p>By default, columns are left-aligned. Use colons to generate right
+and center aligned columns:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>| left | center | right |</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>| :--- | :----: | ----: |</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>| 1    | 2      | 3     |</span></code></pre></div>
+</div>
+<div id="links" class="section level3">
+<h3>Links</h3>
+<p>Markdown hyperlinks work as usual:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; See more about the Markdown markup at the</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; [Commonmark web site](http://commonmark.org/help)</span></span></code></pre></div>
+<p>URLs inside angle brackets are also automatically converted to
+hyperlinks:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; The main R web site is at &lt;https://r-project.org&gt;.</span></span></code></pre></div>
+</div>
+<div id="images" class="section level3">
+<h3>Images</h3>
+<p>Markdown syntax for inline images works. The image files must be in
+the <code>man/figures</code> directory:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Here is an example plot:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ![](example-plot.jpg &quot;Example Plot Title&quot;)</span></span></code></pre></div>
+</div>
+</div>
+<div id="function-links" class="section level2">
+<h2>Function links</h2>
+<p>Markdown notation can also be used to create links to other help
+topics. There are two basic forms:</p>
+<ul>
+<li><code>[topic]</code>: The link text is automatically generated from
+the topic.</li>
+<li><code>[text][topic]</code>: You supply the link text.</li>
+</ul>
+<div id="default-link-text" class="section level3">
+<h3>Default link text</h3>
+<p>First we explore the simplest form: <code>[ref]</code>. The presence
+of trailing parentheses, e.g., <code>[func()]</code>, signals that the
+target <code>func</code> is a function, which causes two things to
+happen:</p>
+<ul>
+<li>The link text <code>func()</code> is automatically typeset as
+code.</li>
+<li>The parentheses are stripped in the derived Rd link target.</li>
+</ul>
+<table style="width:99%;">
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Markdown</th>
+<th align="left">Links to help<br />
+topic for …</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>[func()]</code><br />
+<code>[pkg::func()]</code></td>
+<td align="left">a function in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Always typeset as code.<br />
+Produces Rd: <code>\code{\link[=func]{func()}}</code><br />
+or <code>\code{\link[pkg:func]{pkg::func()}}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>[thing]</code><br />
+<code>[pkg::thing]</code></td>
+<td align="left">a topic in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Use for a dataset or general doc page.<br />
+Not typeset as code.<br />
+Produces Rd: <code>\link{thing}</code> or<br />
+<code>\link[pkg:thing]{pkg::thing}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>[`thing`]</code><br />
+<code>[`pkg::thing`]</code></td>
+<td align="left">a topic in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Same as above, but explicit backticks<br />
+mean that it <strong>is</strong> typeset as code.<br />
+Good for documenting a class.<br />
+Produces Rd: <code>\code{\link{thing}}</code> or<br />
+<code>\code{\link[pkg:thing]{pkg::thing}}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="custom-link-text" class="section level3">
+<h3>Custom link text</h3>
+<p>Use the second form <code>[text][ref]</code> to link to the topic
+specified by <code>ref</code>, but with <code>text</code> as the link
+text.</p>
+<table style="width:99%;">
+<colgroup>
+<col width="30%" />
+<col width="23%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Markdown</th>
+<th align="left">Links to help<br />
+topic for …</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>[text][func()]</code><br />
+<code>[text][pkg::func()]</code></td>
+<td align="left">a function in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Text is not typeset as code.<br />
+Produces Rd: <code>\link[=func]{text}</code> or<br />
+<code>\link[pkg:func]{text}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>[text][thing]</code><br />
+<code>[text][pkg::thing]</code></td>
+<td align="left">a topic in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Text is not typeset as code.<br />
+Use for a topic that documents <code>NULL</code><br />
+and name is set via <code>@name</code>,<br />
+e.g., a dataset or concept.<br />
+Produces Rd: <code>\link[=thing]{text}</code> or<br />
+<code>\link[pkg:thing]{text}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>[`text`][thing]</code><br />
+<code>[`text`][pkg::thing]</code></td>
+<td align="left">a topic in same<br />
+package or in <code>pkg</code></td>
+<td align="left">Same as above, but explicit backticks<br />
+mean that text is typeset as code.<br />
+Produces Rd: <code>\code{\link{=thing}}</code> or<br />
+<code>\code{\link[pkg:thing]{pkg::thing}}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="operators" class="section level3">
+<h3>Operators</h3>
+<p>Links to operators or objects that contain special characters do not
+currently work. So to link to (e.g.) the <code>%&gt;%</code> operator in
+the <code>magrittr</code> package, instead of
+<code>[magrittr::%&gt;%]</code>, you will need to use the
+<code>Rd</code> notation:
+<code>\code{\link[magrittr]{\%&gt;\%}}</code>.</p>
+</div>
+</div>
+<div id="code-chunks" class="section level2">
+<h2>Code chunks</h2>
+<p>You can insert executable code with <code>```{r}</code>, just like in
+knitr documents. For example:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @title Title</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @details Details</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```{r lorem}</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; 1+1</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @md</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="cn">NULL</span></span></code></pre></div>
+<p>becomes:</p>
+<pre class="rd"><code> % Generated by roxygen2: do not edit by hand
+% Please edit documentation in ./&lt;text&gt;
+\name{foo}
+\alias{foo}
+\title{Title}
+\usage{
+foo()
+}
+\description{
+Title
+}
+\details{
+Details
+
+\if{html}{\out{&lt;div class=&quot;sourceCode r&quot;&gt;}}\preformatted{1+1
+#&gt; [1] 2
+}\if{html}{\out{&lt;/div&gt;}}
+} </code></pre>
+<p>This code is run every time you call <code>roxygenize()</code> (or
+<code>devtools::document()</code>) to generate the Rd files. This
+potentially makes <code>roxygenize()</code> (much) slower. Either avoid
+expensive computations, or turn on knitr caching with
+<code>cache = TRUE</code>. Make sure to omit the cache from the package
+with <code>usethis::use_build_ignore()</code>.</p>
+<p>Note that knitr will call the appropriate <code>print()</code> or (if
+available) <code>knitr::knit_print()</code> method on the result. This
+may geenrate markdown not supported by roxygen2. If needed, override the
+automatic methods to have your R calls return your own markdown as a
+character vector, wrapped in <code>knitr::asis_output()</code>.</p>
+<div id="chunk-options" class="section level3">
+<h3>Chunk options</h3>
+<p>Code blocks support some knitr chunk options, e.g. to keep the output
+of several expressions together, you can specify
+<code>results=&quot;hold&quot;</code>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```{r results=&quot;hold&quot;}</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; names(mtcars)</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; nrow(mtcars)</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```</span></span></code></pre></div>
+<p>Some knitr chunk options are reset at the start of every code block,
+so if you want to change these, you’ll have to specify them for every
+chunk. These are currently <code>error</code>, <code>fig.path</code>,
+<code>fig.process</code>, <code>comment</code>,
+<code>collapse</code>.</p>
+<p>Alternatively, you can set the <code>knitr_chunk_options</code>
+option to override these defaults, or add new chunk options that are
+used for the whole package. See <code>?load_options</code> for
+specifying roxygen2 options.</p>
+</div>
+<div id="images-1" class="section level3">
+<h3>Images</h3>
+<p>Plots will create <code>.png</code> files in the
+<code>man/figures</code> directory with file names coming from the chunk
+name. Be aware that plots can quickly increase the size of your package
+leading to challenges for CRAN submission.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```{r iris-pairs-plot}</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; pairs(iris[1:4], main = &quot;Anderson&#39;s Iris Data -- 3 species&quot;,</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;   pch = 21, bg = c(&quot;red&quot;, &quot;green3&quot;, &quot;blue&quot;)[unclass(iris$Species)])</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; ```</span></span></code></pre></div>
+<p>By default roxygen2 only includes PDF images in the PDF manual, and
+SVG images in the HTML manual. If you want to avoid this restriction,
+set the <code>restrict_image_formats</code> roxygen2 option to
+<code>FALSE</code>, see <code>?load_options</code>.</p>
+</div>
+</div>
+<div id="possible-problems" class="section level2">
+<h2>Possible problems</h2>
+<div id="some-rd-tags-cant-contain-markdown" class="section level3">
+<h3>Some Rd tags can’t contain markdown</h3>
+<p>When mixing <code>Rd</code> and Markdown notation, most
+<code>Rd</code> tags may contain Markdown markup, the ones that can
+<em>not</em> are: <code>\acronym</code>, <code>\code</code>,
+<code>\command</code>, <code>\CRANpkg</code>, <code>\deqn</code>,
+<code>\doi</code>, <code>\dontrun</code>, <code>\dontshow</code>,
+<code>\donttest</code>, <code>\email</code>, <code>\env</code>,
+<code>\eqn</code>, <code>\figure</code>, <code>\file</code>,
+<code>\if</code>, <code>\ifelse</code>, <code>\kbd</code>,
+<code>\link</code>, <code>\linkS4class</code>, <code>\method</code>,
+<code>\mjeqn</code>, <code>\mjdeqn</code>, <code>\mjseqn</code>,
+<code>\mjsdeqn</code>, <code>\mjteqn</code>, <code>\mjtdeqn</code>,
+<code>\newcommand</code>, <code>\option</code>, <code>\out</code>,
+<code>\packageAuthor</code>, <code>\packageDescription</code>,
+<code>\packageDESCRIPTION</code>, <code>\packageIndices</code>,
+<code>\packageMaintainer</code>, <code>\packageTitle</code>,
+<code>\pkg</code>, <code>\PR</code>, <code>\preformatted</code>,
+<code>\renewcommand</code>, <code>\S3method</code>,
+<code>\S4method</code>, <code>\samp</code>, <code>\special</code>,
+<code>\testonly</code>, <code>\url</code>, <code>\var</code>,
+<code>\verb</code>.</p>
+</div>
+<div id="mixing-markdown-and-rd-markup" class="section level3">
+<h3>Mixing Markdown and <code>Rd</code> markup</h3>
+<p>Note that turning on Markdown does <em>not</em> turn off the standard
+<code>Rd</code> syntax. We suggest that you use the regular
+<code>Rd</code> tags in a Markdown roxygen chunk only if necessary. The
+two parsers do occasionally interact, and the Markdown parser can pick
+up and reformat Rd syntax, causing an error, or corrupted manuals.</p>
+</div>
+<div id="leading-white-space" class="section level3">
+<h3>Leading white space</h3>
+<p>Leading white space is interpreted by the commonmark parser, but is
+ignored by the <code>Rd</code> parser (except in
+<code>\preformatted{}</code>). Make sure that you only include leading
+white space intentionally, for example, in nested lists.</p>
+</div>
+<div id="spurious-lists" class="section level3">
+<h3>Spurious lists</h3>
+<p>The commonmark parser does not require an empty line before lists,
+and this might lead to unintended lists if a line starts with a number
+followed by a dot, or with an asterisk followed by white space:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; You can see more about this topic in the book cited below, on page</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; 42. Clearly, the numbered list that starts here is not intentional.</span></span></code></pre></div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

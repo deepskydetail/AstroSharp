@@ -1,0 +1,53 @@
+Package: sessioninfo
+Title: R Session Information
+Version: 1.2.2
+Authors@R: 
+    c(person(given = "Gábor",
+             family = "Csárdi",
+             role = "cre",
+             email = "csardi.gabor@gmail.com"),
+      person(given = "Hadley",
+             family = "Wickham",
+             role = "aut"),
+      person(given = "Winston",
+             family = "Chang",
+             role = "aut"),
+      person(given = "Robert",
+             family = "Flight",
+             role = "aut"),
+      person(given = "Kirill",
+             family = "Müller",
+             role = "aut"),
+      person(given = "Jim",
+             family = "Hester",
+             role = "aut"),
+      person(given = "R Core team",
+             role = "ctb"))
+Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
+Description: Query and print information about the current R
+    session.  It is similar to 'utils::sessionInfo()', but includes more
+    information about packages, and where they were installed from.
+License: GPL-2
+URL: https://github.com/r-lib/sessioninfo#readme,
+        https://r-lib.github.io/sessioninfo/
+BugReports: https://github.com/r-lib/sessioninfo/issues
+Depends: R (>= 2.10)
+Imports: cli (>= 3.1.0), tools, utils
+Suggests: callr, covr, mockery, reticulate, rmarkdown, testthat, withr
+Encoding: UTF-8
+RoxygenNote: 7.1.2.9000
+Config/testthat/edition: 3
+Config/Needs/website: pkgdown
+Config/testthat/parallel: true
+NeedsCompilation: no
+Packaged: 2021-12-06 11:31:46 UTC; gaborcsardi
+Author: Gábor Csárdi [cre],
+  Hadley Wickham [aut],
+  Winston Chang [aut],
+  Robert Flight [aut],
+  Kirill Müller [aut],
+  Jim Hester [aut],
+  R Core team [ctb]
+Repository: CRAN
+Date/Publication: 2021-12-06 11:50:02 UTC
+Built: R 4.2.3; ; 2023-03-23 03:11:40 UTC; windows

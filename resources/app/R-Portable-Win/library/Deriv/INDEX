@@ -1,0 +1,6 @@
+Deriv                   Symbolic differentiation of an expression or
+                        function
+Deriv-package           Symbolic Differentiation
+Simplify                Symbollic simplification of an expression or
+                        function
+format1                 Wrapper for base::format() function

@@ -1,0 +1,67 @@
+! ------------------------------------------------------------------------------
+!  de.rc
+!  This file is part of Unifix BWidget Toolkit
+!  Definition of german resources
+! ------------------------------------------------------------------------------
+
+
+! --- symbolic names of buttons ------------------------------------------------
+
+*abortName:   &Abbrechen
+*retryName:   &Wiederholen
+*ignoreName:  &Ignorieren
+*okName:      &OK
+*cancelName:  &Abbrechen
+*yesName:     &Ja
+*noName:      &Nein
+
+
+! --- symbolic names of label of SelectFont dialog ----------------------------
+
+*boldName:          Fett
+*italicName:        Kursiv
+*underlineName:     Unterstrichen
+*overstrikeName:    Durchgestrichen
+*fontName:          &Schriftart
+*sizeName:          S&chriftgrad
+*styleName:         Sc&hriftschnitt
+*colorPickerName:   &Farbe...
+
+! --- symbolic names of label of PasswdDlg dialog -----------------------------
+
+*loginName:    &Login
+*passwordName: &Password
+
+
+! --- resource for SelectFont dialog ------------------------------------------
+
+*SelectFont.title:	    Schrift Auswahl
+*SelectFont.sampletext:	    Beispieltext
+
+
+! --- resource for MessageDlg dialog ------------------------------------------
+
+*MessageDlg.noneTitle:      Meldung
+*MessageDlg.infoTitle:      Hinweis
+*MessageDlg.questionTitle:  Frage
+*MessageDlg.warningTitle:   Warnung
+*MessageDlg.errorTitle:     Fehler
+
+
+! --- resource for PasswdDlg dialog -------------------------------------------
+
+*PasswdDlg.title:  Enter login and password
+
+! --- symbolic names of label of SelectColor dialog ----------------------------
+
+*baseColorsName: Grundfarben
+*userColorsName: Benutzerdefinierte Farben
+
+*yourSelectionName: Gewählte Farbe
+*colorSelectorsName: Farbraum
+
+! --- dynamic help text for SelectColor dialog.  Lines 75 chars max, split by '\n'.
+
+*mouseHelpTextName: Um eine Farbe zu wählen bitte im Farbraum und im Helligkeitsregler\nklicken oder ziehen. Bleibt die gewählte Farbe wieder erwarten schwarz,\nso muß die Helligkeit ganz rechts erhöht werden.\n\nMit einem Klick auf die Grundfarbenpalette kann diese gewählt werden.\n\nEin benutzerdefinierter Farbspeicher kann durch einen Klick selektiert\nwerden. Ab dann wird jede Farbveränderung auch in den Farbspeicher\n geschrieben.
+
+*keyboardHelpTextName: Aktivieren sie das Texteingabefenster mit einem Klick oder mit der\nTabulatortaste. Eine Farbe kann als RGB-Wert eingegeben mit 3 oder 6\nhexadezimalen Ziffern eingegeben werden.\n\nDie Eingabe kann mit der Escape- oder Eingabetaste abgeschlossen werden.\n\nAusserhalb des Eingabefensters wird der Dialog mit der Eingabetaste\nbestätigt und mit der Escapetaste zurückgenommen.

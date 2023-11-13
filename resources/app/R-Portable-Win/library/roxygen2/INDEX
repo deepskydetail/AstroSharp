@@ -1,0 +1,13 @@
+load                    Load package code
+namespace_roclet        Roclet: make 'NAMESPACE'
+rd_roclet               Roclet: make Rd files
+roxygenize              Process a package with the Rd, namespace and
+                        collate roclets
+tags-index-crossref     Tags for indexing and cross-references
+tags-namespace          Tags for managing the 'NAMESPACE'
+tags-rd                 Tags for documenting functions
+tags-rd-formatting      Tags related to markdown support
+tags-rd-other           Tags for documenting datasets and classes
+tags-reuse              Tags that help you reuse documentation
+update_collate          Update Collate field in DESCRIPTION
+vignette_roclet         Re-build outdated vignettes

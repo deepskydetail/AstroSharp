@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Reusing documentation</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Reusing documentation</h1>
+
+
+
+<p>roxygen2 provides several ways to avoid repeating yourself in code
+documentation, while assembling information from multiple places in one
+documentation file:</p>
+<ul>
+<li><p>Combine documentation for closely related functions into a single
+file with <code>@describe</code> in or <code>@rdname</code>.</p></li>
+<li><p>Inherit components from another topic with
+<code>@inheritParams</code>, <code>@inheritSection</code>, or
+<code>@inherit</code>.</p></li>
+<li><p>Use functions to generate repeated text with inline R
+code.</p></li>
+<li><p>Share text between documentation and vignettes with child
+documents.</p></li>
+</ul>
+<p>The chapter concludes by showing you how to update superseded reuse
+mechanisms that we no longer recommend: <code>@includeRmd</code>,
+<code>@eval</code>/<code>@evalRd</code>, and <code>@template</code>.</p>
+<div id="multiple-functions-in-the-same-topic" class="section level2">
+<h2>Multiple functions in the same topic</h2>
+<p>You can document multiple functions in the same file by using either
+<code>@rdname</code> or <code>@describeIn</code> tag. It’s a technique
+best used with care: documenting too many functions in one place leads
+to confusion. Use it when all functions have the same (or very similar)
+arguments.</p>
+<div id="describein" class="section level3">
+<h3><code>@describeIn</code></h3>
+<p>Use <code>@describeIn &lt;destination&gt; &lt;description&gt;</code>
+to document mutiple functions together. It generates a new section named
+“<strong>Related functions and methods</strong>”, further divided into
+subsections by the type of relationship between the source and the
+destination documentation. Each subsection contains a bulleted list
+describing the function with the specified
+<code>&lt;description&gt;</code>.</p>
+<p>You can document several functions which perform slight variations of
+a task or which use different defaults in one documentation file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Power</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x base</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param exp exponent</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="cf">function</span>(x, exp) x <span class="sc">^</span> exp</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @describeIn power Square a number</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">power</span>(x, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @describeIn power Cube a number</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">power</span>(x, <span class="dv">3</span>)</span></code></pre></div>
+<p>In this case, both destination and source are “normal” functions, and
+you can use <code>&lt;description&gt;</code> to explain their
+differences.</p>
+<p><code>@describeIn</code> is also well suited to explain the
+relationships between functions making up an object oriented (OO) scheme
+using S3 or S4. In this case, roxygen will automatically detect whether
+a source function is a method and document the relationship to the
+relevant class or generic. Your new methods will be organised in one of
+two ways:</p>
+<ol style="list-style-type: decimal">
+<li><p>If your new method extends a generic in the
+<code>&lt;destination&gt;</code>, it will be listed in a section titled
+“<strong>Methods for generic <code>&lt;destination&gt;</code></strong>”.
+The subsection will include all methods for your new generic, labelled
+by the class they cover.</p></li>
+<li><p>If your new method extends another generic, for a class
+constructed in the destination, it will be listed in a subsection titled
+“<strong>Methods for class <code>&lt;destination&gt;</code></strong>”.
+It will be labelled by the generic which the method extends.</p></li>
+</ol>
+<p>While you can mix and match (some) different types of functions with
+<code>@describeIn</code>, the output may quickly become disorienting for
+users if the functions are not tightly related.</p>
+</div>
+<div id="order-of-includes" class="section level3">
+<h3>Order of includes</h3>
+<p>By default, roxygen blocks are processed in the order in which they
+appear in the file. When you’re combining multiple files, this can
+sometimes cause the function usage to appear in a suboptimal order. You
+can override the default ordering with <code>@order</code>. For example,
+the following the block would place <code>times</code> first in
+<code>arith.Rd</code> because 1 comes before 2.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @rdname arith</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @order 2</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) x <span class="sc">+</span> y</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @rdname arith</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @order 1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) x <span class="sc">*</span> y</span></code></pre></div>
+</div>
+</div>
+<div id="inheriting-documentation" class="section level2">
+<h2>Inheriting documentation</h2>
+<p>You can inherit documentation from other topics in a few ways:</p>
+<ul>
+<li><p><code>@inheritParams source_function</code> inherits just the
+parameter documentation from <code>source_function()</code>.</p></li>
+<li><p><code>@inherit source_function</code> will inherit all supported
+components from <code>source_function</code>.</p>
+<p>Alternatively, you can use (e.g.)
+<code>@inherit source_function return details</code> to just inherit the
+return value and details from <code>source_function()</code>. Supported
+components are <code>params</code>, <code>return</code>,
+<code>title</code>, <code>description</code>, <code>details</code>,
+<code>seealso</code>, <code>sections</code>, <code>references</code>,
+<code>examples</code>, <code>author</code>, <code>source</code>,
+<code>note</code>.</p></li>
+<li><p><code>@inheritSection source_function Section title</code> will
+inherit the single <code>@section</code> called “Section title” from
+<code>source_function()</code>.</p></li>
+<li><p><code>@inheritDotParams</code> automatically generates parameter
+documentation for <code>...</code> for the common case where you pass
+<code>...</code> on to another function. Because you often override some
+arguments, it comes with a flexible specification for argument
+selection:</p>
+<ul>
+<li><code>@inheritDotParams foo</code> takes all parameters from
+<code>foo()</code></li>
+<li><code>@inheritDotParams foo a b e:h</code> takes parameters
+<code>a</code>, <code>b</code>, and all parameters between
+<code>e</code> and <code>h</code></li>
+<li><code>@inheritDotParams foo -x -y</code> takes all parameters except
+for <code>x</code> and <code>y</code>.</li>
+</ul></li>
+</ul>
+<p>All of these tags also work to inherit documentation from functions
+in another package by using <code>pkg::source_function</code>.</p>
+</div>
+<div id="inline-code" class="section level2">
+<h2>Inline code</h2>
+<p>To insert code inline, enclose it in <code>`r `</code>. Roxygen will
+interpret the rest of the text within backticks as R code and evaluate
+it, and replace the backtick expression with its value. Here’s a simple
+example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Title `r 1 + 1`</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Description `r 2 + 2`</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="cn">NULL</span></span></code></pre></div>
+<p>This is equivalent to writing:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Title 2</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Description 4</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="cf">function</span>() <span class="cn">NULL</span></span></code></pre></div>
+<p>The resulting text, together with the whole tag is interpreted as
+markdown, as usual. This means that you can use R to dynamically write
+markdown. For example if you defined this function in your package:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alphabet <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">&quot;`&quot;</span>, letters[<span class="dv">1</span><span class="sc">:</span>n], <span class="st">&quot;`&quot;</span>, <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>You could then write:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Title</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A string. Must be one of `r alphabet(5)`</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="cn">NULL</span></span></code></pre></div>
+<p>The result is equivalent to writing the following by hand:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Title</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param x A string. Must be one of `a`, `b`, `c`, `d`, `e`</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="cn">NULL</span></span></code></pre></div>
+<p>This is a powerful technique for reducing duplication because you can
+flexibly parameterise the function however best meets your needs. Note
+that the evaluation environment is deliberately a child of the package
+that you’re documenting so you can call internal functions.</p>
+</div>
+<div id="child-documents" class="section level2">
+<h2>Child documents</h2>
+<p>You can use the same <code>.Rmd</code> or <code>.md</code> document
+in the documentation, <code>README.Rmd</code>, and vignettes but using
+child documents:</p>
+<pre><code>```{r child = &quot;common.Rmd&quot;}
+```</code></pre>
+<p>The included Rmd file can have roxygen Markdown-style links to other
+help topics. E.g. <code>[roxygen2::roxygenize()]</code> will link to the
+manual page of the <code>roxygenize</code> function in roxygen2. See
+<code>vignette(&quot;rd-formatting&quot;)</code> for details.</p>
+<p>If the Rmd file contains roxygen (Markdown-style) links to other help
+topics, then some care is needed, as those links will not work in Rmd
+files by default. A workaround is to specify external HTML links for
+them. These external locations will <em>not</em> be used for the manual
+which instead always links to the help topics in the manual.
+Example:</p>
+<pre><code>See also the [roxygen2::roxygenize()] function.
+
+[roxygen2::roxygenize()]: https://roxygen2.r-lib.org/reference/roxygenize.html</code></pre>
+<p>This example will link to the supplied URLs in HTML / Markdown files
+and it will link to the <code>roxygenize</code> help topic in the
+manual.</p>
+<p>Note that if you add external link targets like these, then roxygen
+will emit a warning about these link references being defined multiple
+times (once externally, and once to the help topic). This warning
+originates in Pandoc, and it is harmless.</p>
+</div>
+<div id="superseded" class="section level2">
+<h2>Superseded</h2>
+<p>Over the years, we have experimented with a number of other ways to
+reduce duplication across documentation files. A number of these are now
+superseded and we recommend changing them to use the techniques
+described above:</p>
+<ul>
+<li><p>Instead of <code>@includeRmd man/rmd/example.Rmd</code>, use a
+child document.</p></li>
+<li><p>Instead of <code>@eval</code> or <code>@evalRd</code>, use inline
+R code.</p></li>
+<li><p>Instead of <code>@template</code> and <code>@templateVars</code>
+write your own function and call it from inline R code.</p></li>
+</ul>
+<p>Inline R markdown can only generate markdown text within a tag so in
+principle it is less flexible than
+<code>@eval</code>/<code>@evalRd</code>/<code>@template</code>. However,
+our experience has revealed that generating multiple tags at once tends
+to be rather inflexible, and you often end up refactoring into smaller
+pieces so we don’t believe this reflects a real loss of
+functionality.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

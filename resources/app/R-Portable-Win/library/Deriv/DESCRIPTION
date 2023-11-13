@@ -1,0 +1,27 @@
+Package: Deriv
+Type: Package
+Title: Symbolic Differentiation
+Version: 4.1.3
+Date: 2021-02-24
+Authors@R: c(person(given="Andrew", family="Clausen", role="aut"),
+    person(given="Serguei", family="Sokol", role=c("aut", "cre"),
+    email="sokol@insa-toulouse.fr", comment = c(ORCID = "0000-0002-5674-3327")),
+    person(given="Andreas", family="Rappold", role="ctb", email="arappold@gmx.at"))
+Description: R-based solution for symbolic differentiation. It admits
+    user-defined function as well as function substitution
+    in arguments of functions to be differentiated. Some symbolic
+    simplification is part of the work.
+License: GPL (>= 3)
+Suggests: testthat
+BugReports: https://github.com/sgsokol/Deriv/issues
+RoxygenNote: 7.1.0
+Imports: methods
+NeedsCompilation: no
+Packaged: 2021-02-24 15:25:52 UTC; sokol
+Author: Andrew Clausen [aut],
+  Serguei Sokol [aut, cre] (<https://orcid.org/0000-0002-5674-3327>),
+  Andreas Rappold [ctb]
+Maintainer: Serguei Sokol <sokol@insa-toulouse.fr>
+Repository: CRAN
+Date/Publication: 2021-02-24 17:00:05 UTC
+Built: R 4.2.3; ; 2023-03-23 02:20:37 UTC; windows

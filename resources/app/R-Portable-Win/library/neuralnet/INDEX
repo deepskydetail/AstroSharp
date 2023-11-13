@@ -1,0 +1,10 @@
+compute                 Deprecated function
+confidence.interval     Calculates confidence intervals of the weights
+gwplot                  Plot method for generalized weights
+neuralnet               Training of neural networks
+neuralnet-package       Training of Neural Networks
+plot.nn                 Plot method for neural networks
+predict.nn              Neural network prediction
+prediction              Summarizes the output of the neural network,
+                        the data and the fitted values of glm objects
+                        (if available)

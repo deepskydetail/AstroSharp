@@ -1,0 +1,22 @@
+Package: doSNOW
+Type: Package
+Title: Foreach Parallel Adaptor for the 'snow' Package
+Version: 1.0.20
+Authors@R: c(person("Folashade", "Daniel", role="cre", email = "fdaniel@microsoft.com"), 
+             person("Microsoft", "Corporation", role=c("aut","cph")),
+             person("Stephen", "Weston", role="aut"))
+Description: Provides a parallel backend for the %dopar% function using
+        the snow package of Tierney, Rossini, Li, and Sevcikova.
+Depends: R (>= 2.5.0), foreach(>= 1.2.0), iterators(>= 1.0.0), snow(>=
+        0.3.0), utils
+Suggests: compiler, RUnit, caret, mlbench, rpart, parallel
+License: GPL-2
+NeedsCompilation: no
+Packaged: 2022-01-16 18:34:00 UTC; folashade
+Author: Folashade Daniel [cre],
+  Microsoft Corporation [aut, cph],
+  Stephen Weston [aut]
+Maintainer: Folashade Daniel <fdaniel@microsoft.com>
+Repository: CRAN
+Date/Publication: 2022-02-04 16:20:06 UTC
+Built: R 4.2.3; ; 2023-09-18 01:26:24 UTC; windows
