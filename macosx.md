@@ -27,7 +27,7 @@ You can either install them directly using the links above - or - if you use mac
 ```shell
 brew install --cask r
 brew install --cask rstudio
-brew install ---cask xquartz
+brew install --cask xquartz
 ```
 
 ## Application code
