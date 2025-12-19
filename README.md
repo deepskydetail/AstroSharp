@@ -2,7 +2,7 @@
 
 ## Please Consider Donating
 
-[Donate Here](https://gofund.me/4a332d75)
+[Donate Here](https://gofund.me/4a332d75](https://buymeacoffee.com/deepskydetail))
 
 ## Instructions
 
